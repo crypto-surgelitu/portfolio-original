@@ -1,6 +1,6 @@
 # README.md
 
-# Antony Muhati Portfolio
+# Anthony Muhati Portfolio
 
 A premium portfolio website showcasing professional web development and software engineering services for businesses.
 
@@ -19,7 +19,7 @@ This website is designed to:
 
 # LIVE SERVICES
 
-Antony builds:
+Anthony builds:
 
 * Business websites
 * Web applications
