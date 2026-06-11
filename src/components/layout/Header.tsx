@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { contactConfig } from "@/config/contact";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +77,7 @@ export default function Header() {
             ))}
             <Link
               onClick={() => setIsMenuOpen(false)}
-              className="font-button text-button bg-primary-container text-black py-4 rounded text-center hover:bg-[#b0912d] transition-colors duration-300 font-semibold"
+              className="font-button text-button bg-primary-container text-black py-4 rounded text-center hover:bg-[#b0912d] transition-colors duration-300"
               href="/contact"
             >
               Start Your Project

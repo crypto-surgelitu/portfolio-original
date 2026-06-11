@@ -52,7 +52,7 @@ export default function Roadmap() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map((step) => (
           <div key={step.num} className="space-y-4">
-            <div className="text-primary-container font-headline-md font-semibold select-none">
+            <div className="text-primary-container font-headline-md select-none">
               {step.num}
             </div>
             <h3 className="font-headline-md text-on-surface">

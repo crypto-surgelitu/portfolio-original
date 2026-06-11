@@ -35,7 +35,7 @@ export default function WhatIBuild() {
   return (
     <section className="py-section-v-mobile md:py-section-v px-gutter max-w-container-max mx-auto">
       <div className="mb-16">
-        <h2 className="font-headline-xl text-headline-xl text-on-surface mb-4">What I Build</h2>
+        <h2 className="font-['Hanken_Grotesk'] text-[36px] md:text-[48px] font-semibold leading-tight text-[#e2e2e2] mb-4">What I Build</h2>
         <div className="w-20 h-1 bg-primary-container"></div>
       </div>
       
@@ -48,10 +48,10 @@ export default function WhatIBuild() {
             <span className="material-symbols-outlined text-primary-container text-4xl mb-6 select-none">
               {service.icon}
             </span>
-            <h3 className="font-headline-md text-headline-md text-on-surface mb-4">
+            <h3 className="font-['Hanken_Grotesk'] text-[24px] font-semibold leading-[32px] text-[#e2e2e2] mb-4">
               {service.title}
             </h3>
-            <p className="font-body-md text-body-md text-text-muted flex-grow">
+            <p className="text-[16px] leading-[24px] font-normal text-[#A0A0A0] flex-grow">
               {service.description}
             </p>
           </div>
