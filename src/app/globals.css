@@ -124,6 +124,10 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-full: 9999px;
+
+  /* Animations */
+  --animate-spiral-float: spiral-float 8s ease-in-out infinite;
+  --animate-float-3d: float-3d 6s ease-in-out infinite alternate;
 }
 
 /* Custom Base Styles */
@@ -142,4 +146,36 @@
 .smooth-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+}
+
+.timeline-line {
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.5), rgba(255, 255, 255, 0.08));
+}
+
+.perspective-container {
+  perspective: 1200px;
+}
+
+.hero-3d-element {
+  transform-style: preserve-3d;
+  transition: all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.perspective-container:hover .hero-3d-element {
+  transform: rotateX(8deg) rotateY(-12deg) translateZ(40px) scale(1.05) !important;
+  box-shadow: -20px 30px 60px -10px rgba(212, 175, 55, 0.25), 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes spiral-float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -15px) rotate(1deg); }
+  50% { transform: translate(0, -30px) rotate(0deg); }
+  75% { transform: translate(-10px, -15px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-3d {
+  0% { transform: rotateX(2deg) rotateY(-2deg) translateZ(0); }
+  100% { transform: rotateX(-3deg) rotateY(3deg) translateZ(15px); }
 }

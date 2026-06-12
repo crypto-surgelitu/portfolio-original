@@ -795,6 +795,52 @@ Never hardcode sensitive information.
 
 ---
 
+# DEVELOPMENT SERVER POLICY
+
+Agents MUST NOT kill running development servers.
+
+Agents MUST NOT terminate user processes.
+
+Agents MUST NOT restart development servers without explicit user permission.
+
+Agents MUST NOT run commands such as:
+
+* pkill
+* kill
+* killall
+* taskkill
+* Stop-Process
+* fuser -k
+* or equivalent process termination commands.
+
+---
+
+## CHANGE VERIFICATION POLICY
+
+Agents should verify work through:
+
+* Existing running development servers
+* TypeScript checks
+* ESLint checks
+* Build validation
+* Static code review
+
+before attempting to launch new processes.
+
+---
+
+## SERVER DISCOVERY POLICY
+
+Agents must first determine whether a server is already running before attempting to start a new one.
+
+---
+
+## FAILURE POLICY
+
+If verification requires stopping, restarting, or modifying a running development environment, the agent must stop and ask the user for permission before taking action.
+
+---
+
 # AGENT FAILURE PROTOCOL
 
 When ambiguity exists:
