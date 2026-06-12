@@ -57,7 +57,7 @@ export default function WorkHero() {
               <Image
                 alt="Digital Solutions Built To Elevate"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
-                src="/assets/hero-mockup.png"
+                src="/assets/hero-mockup.webp"
                 width={800}
                 height={600}
                 priority

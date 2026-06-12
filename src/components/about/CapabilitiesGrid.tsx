@@ -10,7 +10,7 @@ const capabilities = [
     title: "ERP Systems",
     description: "End-to-end integration of operational processes.",
     outcome: "Unified Data Ecosystem",
-    image: "/assets/about-erp.png",
+    image: "/assets/about-erp.webp",
     imageAlt: "ERP Systems dashboard mockup",
   },
   {
@@ -18,7 +18,7 @@ const capabilities = [
     title: "Web Applications",
     description: "Scalable, high-performance digital platforms.",
     outcome: "Performance Optimized for Scale",
-    image: "/assets/about-web.png",
+    image: "/assets/about-web.webp",
     imageAlt: "Web application mockup on a laptop screen",
   },
   {
@@ -26,7 +26,7 @@ const capabilities = [
     title: "Mobile Native",
     description: "iOS and Android ecosystem development.",
     outcome: "Seamless User Experience",
-    image: "/assets/about-mobile.png",
+    image: "/assets/about-mobile.webp",
     imageAlt: "Mobile application interface on a smartphone",
   },
   {
@@ -34,7 +34,7 @@ const capabilities = [
     title: "Cloud Infrastructure",
     description: "Architectural design and deployment.",
     outcome: "High Availability and Security",
-    image: "/assets/about-cloud.png",
+    image: "/assets/about-cloud.webp",
     imageAlt: "Cloud infrastructure network visualization",
   },
 ];

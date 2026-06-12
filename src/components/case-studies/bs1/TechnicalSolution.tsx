@@ -37,7 +37,7 @@ export default function TechnicalSolution() {
           >
             <Image
               alt="High-fidelity 3D mockup of the enterprise resource planning system interface showing analytics dashboards and booking management."
-              src="/assets/bs1-solution.png"
+              src="/assets/bs1-solution.webp"
               width={700}
               height={391}
               className="w-full rounded border border-border-subtle shadow-2xl object-cover aspect-[1.79]"

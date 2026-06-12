@@ -10,7 +10,7 @@ const challenges = [
     iconClass: "text-error",
     title: "High Drop-off Rate",
     description: "Significant friction at critical points in the booking flow caused users to abandon the process before completing a reservation.",
-    image: "/assets/challenge-dropoff.png",
+    image: "/assets/challenge-dropoff.webp",
     alt: "Conceptual 3D visualization representing a high drop-off rate with descending arrows and fragmented user flow data.",
   },
   {
@@ -18,7 +18,7 @@ const challenges = [
     iconClass: "text-primary",
     title: "Fragmented Journey",
     description: "Inconsistent user flow across pages created a disjointed experience, making it difficult for visitors to navigate from discovery to booking.",
-    image: "/assets/challenge-fragmented.png",
+    image: "/assets/challenge-fragmented.webp",
     alt: "Conceptual 3D visualization representing a fragmented user journey with disconnected nodes and pathways.",
   },
   {
@@ -26,7 +26,7 @@ const challenges = [
     iconClass: "text-on-surface-variant",
     title: "Zero Mobile Optimization",
     description: "The legacy platform was not designed for mobile users, resulting in poor responsive design and a frustrating experience on smartphones and tablets.",
-    image: "/assets/challenge-mobile.png",
+    image: "/assets/challenge-mobile.webp",
     alt: "Conceptual 3D visualization representing poor mobile optimization with a sleek smartphone display showing interface issues.",
   },
 ];

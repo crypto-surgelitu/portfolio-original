@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Anthony Muhati",
     images: [
       {
-        url: "/assets/services-hero.png",
+        url: "/assets/services-hero.webp",
         width: 1200,
         height: 630,
         alt: "Anthony Muhati — Services",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Services | Anthony Muhati — Strategic Digital Partner",
     description:
       "From business websites and booking platforms to ERP systems and custom software — Anthony Muhati architects digital ecosystems that drive measurable outcomes for modern businesses.",
-    images: ["/assets/services-hero.png"],
+    images: ["/assets/services-hero.webp"],
   },
 };
 

@@ -42,7 +42,7 @@ export default function HeroSection() {
           <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface-elevated smooth-hover">
             <Image
               alt="High-fidelity mockup of the Hippo Transfers & Adventures travel and tourism website displayed on a laptop, showcasing the hero section with safari imagery and booking interface."
-              src="/assets/hippo-transfers.png"
+              src="/assets/hippo-transfers.webp"
               width={1200}
               height={675}
               className="w-full h-auto object-cover opacity-90 transition-opacity duration-500 hover:opacity-100"

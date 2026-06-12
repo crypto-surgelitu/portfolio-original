@@ -47,7 +47,7 @@ export default function ServicesHero() {
           <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface-elevated">
             <Image
               alt="Anthony Muhati — Strategic Partner"
-              src="/assets/services-hero.png"
+              src="/assets/services-hero.webp"
               width={600}
               height={600}
               className="w-full h-auto object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"

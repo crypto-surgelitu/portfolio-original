@@ -44,7 +44,7 @@ export default function AboutHero() {
         <Image
           alt="Anthony Muhati — Designer & Developer"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 mix-blend-luminosity hover:grayscale-0 transition-all duration-700"
-          src="/assets/about-portrait.png"
+          src="/assets/about-portrait.webp"
           width={800}
           height={1000}
           priority

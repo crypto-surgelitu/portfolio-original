@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Anthony Muhati",
     images: [
       {
-        url: "/assets/bs1-system.png",
+        url: "/assets/bs1-system.webp",
         width: 1200,
         height: 630,
         alt: "BS1 Booking System case study preview",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "BS1 Booking System Case Study | Anthony Muhati",
     description:
       "How we built a full-stack room booking system for SwahiliPot Hub — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined operations.",
-    images: ["/assets/bs1-system.png"],
+    images: ["/assets/bs1-system.webp"],
   },
 };
 

@@ -93,7 +93,7 @@ export default function StrategicApproach() {
           <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface-elevated smooth-hover">
             <Image
               alt="Screenshot of the refined booking platform interface showing streamlined navigation and safari package listings."
-              src="/assets/approach-platform.png"
+              src="/assets/approach-platform.webp"
               width={700}
               height={500}
               className="w-full h-auto object-cover opacity-90 transition-opacity duration-500 hover:opacity-100"

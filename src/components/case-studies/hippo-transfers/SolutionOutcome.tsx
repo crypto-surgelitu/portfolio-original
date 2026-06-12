@@ -32,7 +32,7 @@ export default function SolutionOutcome() {
           <div className="h-64 sm:h-80 w-full relative">
             <Image
               alt="High-fidelity mobile context mockup showing the optimized booking platform with intuitive navigation and clean interface."
-              src="/assets/solution-ui.png"
+              src="/assets/solution-ui.webp"
               width={800}
               height={400}
               className="w-full h-full object-cover absolute inset-0"

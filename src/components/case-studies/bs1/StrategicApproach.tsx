@@ -85,7 +85,7 @@ export default function StrategicApproach() {
         >
           <Image
             alt="High-fidelity mockup of the BS1 ERP dashboard showing interconnected data nodes, scheduling calendar, and resource management interface."
-            src="/assets/bs1-approach.png"
+            src="/assets/bs1-approach.webp"
             width={700}
             height={391}
             className="w-full rounded border border-border-subtle shadow-2xl object-cover aspect-[1.79]"

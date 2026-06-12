@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Anthony Muhati",
     images: [
       {
-        url: "/assets/hippo-transfers.png",
+        url: "/assets/hippo-transfers.webp",
         width: 1200,
         height: 630,
         alt: "Hippo Transfers & Adventures case study preview",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Hippo Transfers Case Study | Anthony Muhati",
     description:
       "How we redesigned and rebuilt the booking platform for Hippo Transfers & Adventures — a mobile-first, high-performance safari booking experience.",
-    images: ["/assets/hippo-transfers.png"],
+    images: ["/assets/hippo-transfers.webp"],
   },
 };
 

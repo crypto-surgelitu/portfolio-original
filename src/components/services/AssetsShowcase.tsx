@@ -11,7 +11,7 @@ const services = [
     description:
       "High-performance corporate platforms engineered to establish authority and drive lead generation.",
     features: ["Corporate Identity", "Lead Capture Systems"],
-    image: "/assets/services-website.png",
+    image: "/assets/services-website.webp",
     alt: "High-fidelity mockup of a professional business website displayed on desktop.",
   },
   {
@@ -20,7 +20,7 @@ const services = [
     description:
       "Seamless reservation ecosystems for hospitality, tourism, and service-based enterprises.",
     features: ["Real-time Availability", "Payment Integration"],
-    image: "/assets/services-booking.png",
+    image: "/assets/services-booking.webp",
     alt: "Premium high-fidelity mockup of a sophisticated booking platform interface.",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     description:
       "Complex, interactive software delivered through the browser to solve specific business needs.",
     features: ["SaaS Architecture", "Scalable Infrastructure"],
-    image: "/assets/services-webapp.png",
+    image: "/assets/services-webapp.webp",
     alt: "High-fidelity 3D mockup of a modern web application interface.",
   },
   {
@@ -38,7 +38,7 @@ const services = [
     description:
       "Native and cross-platform mobile experiences designed for engagement and utility.",
     features: ["iOS & Android", "Offline Capabilities"],
-    image: "/assets/services-mobile.png",
+    image: "/assets/services-mobile.webp",
     alt: "Premium high-fidelity mockup of a mobile application interface displayed on smartphone.",
   },
   {
@@ -47,7 +47,7 @@ const services = [
     description:
       "Enterprise Resource Planning solutions to unify business processes and data.",
     features: ["Resource Management", "Process Automation"],
-    image: "/assets/services-erp.png",
+    image: "/assets/services-erp.webp",
     alt: "High-fidelity mockup of a complex ERP business system showing administrative interfaces.",
   },
   {
@@ -56,7 +56,7 @@ const services = [
     description:
       "Bespoke internal tools for project, staff, and operational oversight.",
     features: ["Workflow Optimization", "Team Collaboration"],
-    image: "/assets/services-management.png",
+    image: "/assets/services-management.webp",
     alt: "High-fidelity 3D mockup of an enterprise resource planning management system interface.",
   },
   {
@@ -65,7 +65,7 @@ const services = [
     description:
       "Secure, branded environments for clients to manage their relationship with your business.",
     features: ["Self-Service Tools", "Document Sharing"],
-    image: "/assets/services-portal.png",
+    image: "/assets/services-portal.webp",
     alt: "Premium high-fidelity mockup of a custom web application interface with branded portal design.",
   },
   {
@@ -74,7 +74,7 @@ const services = [
     description:
       "Precision tracking and management of physical or digital assets across the supply chain.",
     features: ["Stock Monitoring", "Automated Alerts"],
-    image: "/assets/services-inventory.png",
+    image: "/assets/services-inventory.webp",
     alt: "Conceptual 3D visualization of cloud infrastructure with glowing data nodes representing inventory tracking.",
   },
   {
@@ -83,7 +83,7 @@ const services = [
     description:
       "Visual data intelligence for real-time decision making and performance tracking.",
     features: ["KPI Visualization", "Data Integration"],
-    image: "/assets/services-dashboard.png",
+    image: "/assets/services-dashboard.webp",
     alt: "High-fidelity 3D visualization of enterprise resource planning analytics dashboard.",
   },
   {
@@ -92,7 +92,7 @@ const services = [
     description:
       "Tailor-made digital solutions for unique challenges that off-the-shelf software can&rsquo;t solve.",
     features: ["Bespoke Logic", "Competitive Advantage"],
-    image: "/assets/services-custom.png",
+    image: "/assets/services-custom.webp",
     alt: "High-fidelity mockup of a professional mobile application representing custom software design.",
   },
   {
@@ -101,7 +101,7 @@ const services = [
     description:
       "Proactive care to ensure your web presence remains secure, fast, and up-to-date.",
     features: ["Security Patches", "Performance Tuning"],
-    image: "/assets/services-maintenance.png",
+    image: "/assets/services-maintenance.webp",
     alt: "Conceptual visualization of a manual system being replaced by automated digital maintenance processes.",
   },
   {
@@ -110,7 +110,7 @@ const services = [
     description:
       "Dedicated technical assistance to ensure your software operates at peak efficiency.",
     features: ["Bug Resolution", "Feature Enhancements"],
-    image: "/assets/services-support.png",
+    image: "/assets/services-support.webp",
     alt: "Conceptual 3D visualization of resource tracking and system support infrastructure.",
   },
 ];

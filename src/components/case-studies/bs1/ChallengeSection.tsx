@@ -10,7 +10,7 @@ const challenges = [
     title: "Manual Scheduling",
     description: "Outdated paper-based logs leading to double bookings and administrative overhead.",
     impact: "High Administrative Overhead",
-    image: "/assets/bs1-manual.png",
+    image: "/assets/bs1-manual.webp",
     alt: "Conceptual visualization of a manual paper-based booking log being replaced by a digital system.",
   },
   {
@@ -18,7 +18,7 @@ const challenges = [
     title: "Booking Conflicts",
     description: "Lack of real-time visibility into room availability causing friction for community members.",
     impact: "Community Friction",
-    image: "/assets/bs1-conflicts.png",
+    image: "/assets/bs1-conflicts.webp",
     alt: "Conceptual visualization of a booking conflict error being resolved into a streamlined digital workflow.",
   },
   {
@@ -26,7 +26,7 @@ const challenges = [
     title: "Resource Tracking",
     description: "Difficulty in monitoring space utilization and planning for future hub expansion.",
     impact: "Inefficient Space Utilization",
-    image: "/assets/bs1-tracking.png",
+    image: "/assets/bs1-tracking.webp",
     alt: "Conceptual 3D visualization of resource tracking and space utilization analytics.",
   },
 ];

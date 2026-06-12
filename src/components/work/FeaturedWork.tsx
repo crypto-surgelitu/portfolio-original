@@ -37,7 +37,7 @@ export default function FeaturedWork() {
                 <Image 
                   alt="Screenshot of the Hippo Transfers & Adventures website header showing the logo, navigation menu, and a hero section with an elephant in the savanna." 
                   className="w-full h-auto rounded shadow-2xl" 
-                  src="/assets/hippo-transfers.png"
+                  src="/assets/hippo-transfers.webp"
                   width={800}
                   height={500}
                 />
@@ -52,7 +52,7 @@ export default function FeaturedWork() {
                 <Image 
                   alt="Screenshot of the BS1 Booking System dashboard interface displaying administrative controls, scheduling logs, resource calendar, and analytics." 
                   className="w-full h-auto rounded shadow-2xl" 
-                  src="/assets/bs1-system.png"
+                  src="/assets/bs1-system.webp"
                   width={800}
                   height={500}
                 />
