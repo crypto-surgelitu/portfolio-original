@@ -38,10 +38,10 @@ export default function ContactHero() {
             Direct Inquiry:
           </span>
           <Link
-            href={`mailto:${contactConfig.email.replace("mailto:", "")}`}
+            href={`mailto:${contactConfig.emailRaw}`}
             className="font-body-md text-body-md text-primary hover:text-primary-fixed transition-colors underline underline-offset-2 min-h-[44px] flex items-center"
           >
-            {contactConfig.email.replace("mailto:", "")}
+            {contactConfig.emailRaw}
           </Link>
         </div>
       </motion.div>

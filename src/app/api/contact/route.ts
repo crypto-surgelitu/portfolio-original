@@ -1,5 +1,8 @@
 import { Resend } from "resend";
-import { contactConfig } from "@/config/contact";
+
+const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@anthonymuhati.com";
+const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+const fromName = process.env.RESEND_FROM_NAME || "Portfolio Contact";
 
 function getResend(): Resend | null {
   if (process.env.RESEND_API_KEY) {
@@ -33,8 +36,8 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: [contactConfig.email.replace("mailto:", "")],
+      from: `${fromName} <${fromEmail}>`,
+      to: [receiverEmail],
       subject: `New Project Inquiry from ${firstName} ${lastName}`,
       html: `
         <h2>New Project Inquiry</h2>

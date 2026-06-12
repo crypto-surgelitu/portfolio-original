@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
+import { validateEnv } from "@/config/env";
+
+validateEnv();
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
   alternates: {
@@ -33,6 +39,13 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
 };
 

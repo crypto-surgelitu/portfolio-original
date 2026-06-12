@@ -34,24 +34,37 @@ export default function EngagementTimeline() {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-      className="bg-surface-elevated border border-border-subtle rounded-xl p-6 md:p-8 h-full"
+      className="lg:pl-8 border-t lg:border-t-0 lg:border-l border-border-subtle pt-8 lg:pt-0"
     >
-      <h2 className="font-['Hanken_Grotesk'] text-[32px] md:text-[40px] font-semibold text-[#e2e2e2] mb-12">
+      <h3 className="font-headline-md text-headline-md text-on-surface mb-stack-lg">
         Engagement Process
-      </h2>
+      </h3>
 
-      <div className="space-y-12">
-        {steps.map((step) => (
-          <div key={step.number} className="flex flex-col gap-3">
-            <span className="font-['Hanken_Grotesk'] text-[64px] font-bold text-[#f2ca50] leading-none">
-              {step.number}
-            </span>
-            <h3 className="font-['Hanken_Grotesk'] text-[22px] font-semibold text-[#f2ca50]">
-              {step.title}
-            </h3>
-            <p className="text-[16px] leading-[26px] text-[#A0A0A0]">
-              {step.description}
-            </p>
+      <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-border-subtle">
+        {steps.map((step, index) => (
+          <div
+            key={step.number}
+            className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${index === 0 ? "is-active" : ""}`}
+          >
+            <div
+              className={`flex items-center justify-center w-10 h-10 rounded-full border shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_0_4px_#0B0B0B] ${
+                index === 0
+                  ? "border-primary-container bg-[#181818] text-primary-container"
+                  : "border-border-subtle bg-[#181818] text-text-muted"
+              }`}
+            >
+              <span className="font-label-caps text-label-caps">
+                {step.number}
+              </span>
+            </div>
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] ml-4 md:ml-0 md:group-odd:text-right">
+              <h4 className="font-headline-md text-headline-md text-on-surface mb-2">
+                {step.title}
+              </h4>
+              <p className="font-body-md text-body-md text-text-muted">
+                {step.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
