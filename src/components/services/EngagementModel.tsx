@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useMotionValueEvent } from "framer-motion";
 
 const steps = [
   {
@@ -39,11 +39,13 @@ function ProcessStep({
   index,
   hoveredIndex,
   setHoveredIndex,
+  isCyclicGlow,
 }: {
   step: (typeof steps)[0];
   index: number;
   hoveredIndex: number | null;
   setHoveredIndex: (index: number | null) => void;
+  isCyclicGlow: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
@@ -68,18 +70,20 @@ function ProcessStep({
       }`}
     >
       <div
-        className={`h-12 w-12 rounded-full bg-background-base flex items-center justify-center font-headline-md text-headline-md mb-stack-md mx-auto md:mx-0 transition-all duration-300 ${
-          step.active
-            ? "border border-primary text-primary"
-            : "border border-border-subtle text-on-surface"
-        } ${
-          isHovered
-            ? "shadow-[0_0_20px_-3px_rgba(212,175,55,0.5)] border-primary text-primary"
-            : ""
-        }`}
-      >
-        {step.number}
-      </div>
+          className={`h-12 w-12 rounded-full bg-background-base flex items-center justify-center font-headline-md text-headline-md mb-stack-md mx-auto md:mx-0 transition-all duration-300 ${
+            step.active
+              ? "border border-primary text-primary"
+              : "border border-border-subtle text-on-surface"
+          } ${
+            isHovered
+              ? "shadow-[0_0_20px_-3px_rgba(212,175,55,0.5)] border-primary text-primary"
+              : isCyclicGlow
+                ? "shadow-[0_0_20px_-3px_rgba(212,175,55,0.5)] border-primary text-primary animate-pulse"
+                : ""
+          }`}
+        >
+          {step.number}
+        </div>
       <h4 className="font-headline-md text-headline-md text-on-surface mb-2 text-center md:text-left">
         {step.title}
       </h4>
@@ -94,6 +98,18 @@ export default function EngagementModel() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeGlowIndex, setActiveGlowIndex] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 0.25) setActiveGlowIndex(0);
+    else if (latest < 0.5) setActiveGlowIndex(1);
+    else if (latest < 0.75) setActiveGlowIndex(2);
+  });
 
   return (
     <section
@@ -118,7 +134,14 @@ export default function EngagementModel() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-md relative">
           <div className="hidden md:block absolute top-6 left-6 right-6 h-px bg-border-subtle -z-10" />
           {steps.map((step, i) => (
-            <ProcessStep key={step.number} step={step} index={i} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} />
+            <ProcessStep
+              key={step.number}
+              step={step}
+              index={i}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+              isCyclicGlow={i === activeGlowIndex && i < 3 && hoveredIndex === null}
+            />
           ))}
         </div>
       </div>
