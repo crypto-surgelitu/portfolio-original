@@ -39,11 +39,11 @@ export default function AboutHero() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="flex-1 relative min-h-[50vh] lg:min-h-full"
+        className="flex-1 relative min-h-[50vh] lg:min-h-full group"
       >
         <Image
           alt="Anthony Muhati — Designer & Developer"
-          className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 mix-blend-luminosity hover:grayscale-0 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 transition-all duration-700"
           src="/assets/about-portrait.webp"
           width={800}
           height={1000}

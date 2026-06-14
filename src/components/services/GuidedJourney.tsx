@@ -50,7 +50,8 @@ function JourneyCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
-      className={`bg-surface-elevated border border-border-subtle rounded-xl p-8 smooth-hover flex flex-col h-full relative overflow-hidden ${
+      whileHover={{ scale: 1.02, y: -6 }}
+      className={`bg-surface-elevated border border-border-subtle rounded-xl p-8 flex flex-col h-full relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_30px_-5px_rgba(212,175,55,0.35)] hover:ring-2 hover:ring-primary/40 ${
         journey.badge ? "ring-1 ring-primary/30" : ""
       }`}
     >

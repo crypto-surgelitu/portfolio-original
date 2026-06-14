@@ -198,6 +198,52 @@ over:
 
 ---
 
+# ENVIRONMENT VARIABLES
+
+This project requires environment variables to run.
+
+## Local Development
+
+1. Copy `.env.example` to `.env.local`:
+   ```
+   cp .env.example .env.local
+   ```
+2. Fill in all real values in `.env.local`
+3. Restart the dev server:
+   ```
+   npm run dev
+   ```
+
+## Vercel Deployment
+
+Add each variable from `.env.example` to Vercel:
+
+1. Go to **Vercel Dashboard → Your Project → Settings → Environment Variables**
+2. Add each variable with its real value
+3. Redeploy for changes to take effect
+
+### Variable Reference
+
+| Variable | Scope | Required | Description |
+|---|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Public | Yes | Production URL |
+| `NEXT_PUBLIC_SITE_NAME` | Public | Yes | Site/brand name |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Public | Yes | Public contact email |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Public | Yes | WhatsApp number (digits only, no +) |
+| `NEXT_PUBLIC_WHATSAPP_MESSAGE` | Public | No | WhatsApp pre-filled message |
+| `NEXT_PUBLIC_LINKEDIN_URL` | Public | Yes | LinkedIn profile URL |
+| `NEXT_PUBLIC_GITHUB_URL` | Public | Yes | GitHub profile URL |
+| `NEXT_PUBLIC_DEFAULT_OG_IMAGE` | Public | Yes | Default Open Graph image path |
+| `RESEND_API_KEY` | Server | No | Resend API key for contact form |
+| `CONTACT_RECEIVER_EMAIL` | Server | No | Email receiving contact submissions |
+| `RESEND_FROM_EMAIL` | Server | No | Verified Resend sender email |
+| `RESEND_FROM_NAME` | Server | No | Resend sender display name |
+
+- **Public** (`NEXT_PUBLIC_` prefix): Available in the browser.
+- **Server** (no prefix): Server-side only, never exposed to the client.
+
+---
+
 # FINAL NOTE
 
 This project is not just a portfolio.

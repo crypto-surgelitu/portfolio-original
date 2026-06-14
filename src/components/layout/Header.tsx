@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,12 +21,24 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border-subtle">
-      <div className="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
-        <Link 
-          className="font-headline-md text-headline-md font-bold text-on-surface hover:text-primary transition-colors duration-300 scale-95 active:scale-90" 
-          href="/"
-        >
-          Anthony Muhati
+      <div className="flex justify-between items-center max-w-container-max mx-auto px-gutter h-44">
+        <Link href="/" className="flex items-center gap-4 md:gap-5">
+          <Image
+            src="/logos/monogram-v2.webp"
+            alt="Anthony Muhati Logo"
+            width={112}
+            height={167}
+            className="w-20 md:w-24 lg:w-28 xl:w-28 h-auto"
+            priority
+          />
+          <div className="flex flex-col justify-center">
+            <span className="font-cormorant text-xl sm:text-2xl md:text-3xl font-semibold tracking-widest text-[#C8A97E] leading-none uppercase">
+              Anthony Muhati
+            </span>
+            <span className="font-cormorant text-[10px] sm:text-xs tracking-[0.3em] text-[#C8A97E]/60 uppercase mt-1 leading-none hidden sm:block">
+              Crafted for Growth
+            </span>
+          </div>
         </Link>
         
         {/* Desktop Navigation */}
@@ -63,7 +76,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
-        <div className="md:hidden fixed top-20 left-0 w-full bg-background border-b border-border-subtle z-40 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden fixed top-44 left-0 w-full bg-background border-b border-border-subtle z-40 animate-in fade-in slide-in-from-top-4 duration-200">
           <nav className="flex flex-col p-6 space-y-4">
             {navLinks.map((link) => (
               <Link

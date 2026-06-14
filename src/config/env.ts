@@ -9,6 +9,7 @@ const envVars: EnvVar[] = [
   { key: "NEXT_PUBLIC_SITE_NAME", public: true, description: "Site/brand name" },
   { key: "NEXT_PUBLIC_CONTACT_EMAIL", public: true, description: "Public contact email" },
   { key: "NEXT_PUBLIC_WHATSAPP_NUMBER", public: true, description: "WhatsApp number (digits only)" },
+  { key: "NEXT_PUBLIC_WHATSAPP_MESSAGE", public: true, description: "WhatsApp pre-filled message" },
   { key: "NEXT_PUBLIC_LINKEDIN_URL", public: true, description: "LinkedIn profile URL" },
   { key: "NEXT_PUBLIC_GITHUB_URL", public: true, description: "GitHub profile URL" },
   { key: "NEXT_PUBLIC_DEFAULT_OG_IMAGE", public: true, description: "Default OG image path" },
