@@ -31,7 +31,7 @@ export default function HeroSection() {
         >
           <Image
             alt="High-fidelity mockup of the BS1 Core ERP dashboard displaying administrative controls, scheduling interface, and resource management panels."
-            src="/assets/bs1-system.webp"
+            src="/assets/bs1-system-v2.webp"
             width={700}
             height={391}
             className="w-full rounded border border-border-subtle shadow-2xl object-cover aspect-[1.79]"

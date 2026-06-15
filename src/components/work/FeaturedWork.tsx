@@ -52,7 +52,7 @@ export default function FeaturedWork() {
                 <Image 
                   alt="Screenshot of the BS1 Booking System dashboard interface displaying administrative controls, scheduling logs, resource calendar, and analytics." 
                   className="w-full h-auto rounded shadow-2xl" 
-                  src="/assets/bs1-system.webp"
+                  src="/assets/bs1-system-v2.webp"
                   width={800}
                   height={500}
                 />

@@ -50,7 +50,7 @@ const caseStudies = [
         highlight: true,
       },
     ],
-    image: "/assets/bs1-system.webp",
+    image: "/assets/bs1-system-v2.webp",
     imageAlt: "BS1 Core ERP dashboard mockup on a desktop screen",
     href: "/work/bs1",
   },

@@ -11,7 +11,7 @@ export const metadata: Metadata = createMetadata({
   description:
     "How we built a full-stack room booking system for SwahiliPot Hub — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined operations.",
   path: "/work/bs1",
-  ogImage: "/assets/bs1-system.webp",
+  ogImage: "/assets/bs1-system-v2.webp",
   ogType: "article",
 });
 
