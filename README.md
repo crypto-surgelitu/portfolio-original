@@ -74,7 +74,7 @@ Infrastructure:
 
 Services:
 
-* Resend (email handling)
+* Brevo (transactional email)
 * WhatsApp click-to-chat integration
 
 ---
@@ -137,7 +137,7 @@ Visitors:
 
 ## Email
 
-Handled via Resend API.
+Handled via Brevo transactional email API.
 
 Used for contact form submissions.
 
@@ -234,10 +234,8 @@ Add each variable from `.env.example` to Vercel:
 | `NEXT_PUBLIC_LINKEDIN_URL` | Public | Yes | LinkedIn profile URL |
 | `NEXT_PUBLIC_GITHUB_URL` | Public | Yes | GitHub profile URL |
 | `NEXT_PUBLIC_DEFAULT_OG_IMAGE` | Public | Yes | Default Open Graph image path |
-| `RESEND_API_KEY` | Server | No | Resend API key for contact form |
 | `CONTACT_RECEIVER_EMAIL` | Server | No | Email receiving contact submissions |
-| `RESEND_FROM_EMAIL` | Server | No | Verified Resend sender email |
-| `RESEND_FROM_NAME` | Server | No | Resend sender display name |
+| `BREVO_API_KEY` | Server | No | Brevo API key for transactional email |
 
 - **Public** (`NEXT_PUBLIC_` prefix): Available in the browser.
 - **Server** (no prefix): Server-side only, never exposed to the client.

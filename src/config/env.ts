@@ -13,10 +13,8 @@ const envVars: EnvVar[] = [
   { key: "NEXT_PUBLIC_LINKEDIN_URL", public: true, description: "LinkedIn profile URL" },
   { key: "NEXT_PUBLIC_GITHUB_URL", public: true, description: "GitHub profile URL" },
   { key: "NEXT_PUBLIC_DEFAULT_OG_IMAGE", public: true, description: "Default OG image path" },
-  { key: "RESEND_API_KEY", public: false, description: "Resend API key for contact form" },
   { key: "CONTACT_RECEIVER_EMAIL", public: false, description: "Email that receives contact form submissions" },
-  { key: "RESEND_FROM_EMAIL", public: false, description: "Verified sender email in Resend" },
-  { key: "RESEND_FROM_NAME", public: false, description: "Sender display name for Resend emails" },
+  { key: "BREVO_API_KEY", public: false, description: "Brevo API key for transactional email (Brevo dashboard → SMTP & API → API Keys)" },
 ];
 
 const warned = new Set<string>();
