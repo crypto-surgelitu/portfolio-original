@@ -7,7 +7,7 @@ import TechnicalSolution from "@/components/case-studies/bs1/TechnicalSolution";
 import OutcomeCTA from "@/components/case-studies/bs1/OutcomeCTA";
 
 export const metadata: Metadata = createMetadata({
-  title: "BS1 Booking System Case Study | Anthony Muhati",
+  title: "BS1 Booking System Case Study",
   description:
     "How we built a full-stack room booking system for SwahiliPot Hub — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined operations.",
   path: "/work/bs1",

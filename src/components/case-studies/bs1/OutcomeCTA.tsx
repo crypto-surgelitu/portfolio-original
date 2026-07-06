@@ -26,10 +26,10 @@ export default function OutcomeCTA() {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-        className="bg-surface-elevated p-12 border border-border-subtle rounded max-w-4xl mx-auto mb-16 flex flex-col md:flex-row justify-around items-center gap-stack-lg"
+        className="bg-surface-elevated p-6 md:p-12 border border-border-subtle rounded max-w-4xl mx-auto mb-16 flex flex-col md:flex-row justify-center md:justify-around items-center gap-stack-lg flex-wrap"
       >
         <div className="text-center">
-          <span className="block font-display-lg text-display-lg text-primary-container mb-2">
+          <span className="block font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary-container mb-2">
             Reduced
           </span>
           <span className="font-body-md text-body-md text-text-muted">
@@ -38,7 +38,7 @@ export default function OutcomeCTA() {
         </div>
         <div className="hidden md:block w-px h-24 bg-border-subtle" />
         <div className="text-center">
-          <span className="block font-display-lg text-display-lg text-primary-container mb-2">
+          <span className="block font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary-container mb-2">
             Eliminated
           </span>
           <span className="font-body-md text-body-md text-text-muted">

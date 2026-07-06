@@ -1,0 +1,150 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Anthony Muhati Logo Anthony Muhati Crafted for Growth" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Anthony Muhati Logo" [ref=e5]
+        - generic [ref=e6]:
+          - generic [ref=e7]: Anthony Muhati
+          - generic [ref=e8]: Crafted for Growth
+      - navigation [ref=e9]:
+        - link "Home" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e11] [cursor=pointer]:
+          - /url: /services
+        - link "Work" [ref=e12] [cursor=pointer]:
+          - /url: /work
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - link "Start Your Project" [ref=e15] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Websites, Apps & Business Systems Built For Modern Businesses" [level=1] [ref=e20]:
+          - text: Websites, Apps &
+          - text: Business Systems
+          - text: Built For Modern Businesses
+        - paragraph [ref=e21]: I specialize in design-first development. Before writing a single line of code, we design, review, and perfect your digital solution. No surprises, just premium results.
+        - generic [ref=e22]:
+          - link "Start A Project" [ref=e23] [cursor=pointer]:
+            - /url: /contact
+          - link "View My Work" [ref=e24] [cursor=pointer]:
+            - /url: /work
+      - img "Premium multi-device mockup showing a modern, dark-themed dashboard on a laptop, tablet, and smartphone. The devices are floating slightly above a sleek black surface, softly illuminated by warm, high-end studio lighting, conveying a sense of luxury and technological sophistication." [ref=e27]
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - img [ref=e31]
+        - text: Real Client Projects
+      - generic [ref=e34]:
+        - img [ref=e35]
+        - text: Design-First Workflow
+      - generic [ref=e38]:
+        - img [ref=e39]
+        - text: Websites, Apps, Systems
+      - generic [ref=e41]:
+        - img [ref=e42]
+        - text: Kenya & International
+    - generic [ref=e45]:
+      - heading "What I Build" [level=2] [ref=e47]
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: language
+          - heading "Business Websites" [level=3] [ref=e52]
+          - paragraph [ref=e53]: High-performance corporate sites, portfolios, and marketing pages designed to convert.
+        - generic [ref=e54]:
+          - generic [ref=e55]: web
+          - heading "Web Apps" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Interactive browser-based applications with complex functionality and seamless UX.
+        - generic [ref=e58]:
+          - generic [ref=e59]: smartphone
+          - heading "Mobile Apps" [level=3] [ref=e60]
+          - paragraph [ref=e61]: Native and cross-platform mobile applications for iOS and Android.
+        - generic [ref=e62]:
+          - generic [ref=e63]: account_tree
+          - heading "ERP Systems" [level=3] [ref=e64]
+          - paragraph [ref=e65]: Comprehensive enterprise resource planning solutions tailored to your business processes.
+        - generic [ref=e66]:
+          - generic [ref=e67]: dashboard
+          - heading "Business Dashboards" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Data visualization tools that turn complex metrics into actionable insights.
+        - generic [ref=e70]:
+          - generic [ref=e71]: integration_instructions
+          - heading "Custom Software" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Bespoke software solutions built to solve your unique operational challenges.
+    - generic [ref=e75]:
+      - heading "Featured Work" [level=2] [ref=e77]
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]
+          - img "Screenshot of the Hippo Transfers & Adventures website header showing the logo, navigation menu, and a hero section with an elephant in the savanna." [ref=e88]
+        - generic [ref=e89]:
+          - img "Screenshot of the BS1 Booking System dashboard interface displaying administrative controls, scheduling logs, resource calendar, and analytics." [ref=e92]
+          - generic [ref=e93]
+    - generic [ref=e98]:
+      - heading "Operational Roadmap" [level=2] [ref=e100]
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]: "01"
+          - heading "Intake" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Client approach and initial requirements gathering.
+        - generic [ref=e107]:
+          - generic [ref=e108]: "02"
+          - heading "Strategy" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Business alignment and solution architecting.
+        - generic [ref=e111]:
+          - generic [ref=e112]: "03"
+          - heading "Design" [level=3] [ref=e113]
+          - paragraph [ref=e114]: High-fidelity interface blueprints and UX mapping.
+        - generic [ref=e115]:
+          - generic [ref=e116]: "04"
+          - heading "Agreement" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Pricing transparency and final project approval.
+        - generic [ref=e119]:
+          - generic [ref=e120]: "05"
+          - heading "Development" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Clean, scalable coding based on approved designs.
+        - generic [ref=e123]:
+          - generic [ref=e124]: "06"
+          - heading "QA & Review" [level=3] [ref=e125]
+          - paragraph [ref=e126]: Rigorous testing and client feedback loops.
+        - generic [ref=e127]:
+          - generic [ref=e128]: "07"
+          - heading "Deployment" [level=3] [ref=e129]
+          - paragraph [ref=e130]: Seamless launch and transition to live environment.
+        - generic [ref=e131]:
+          - generic [ref=e132]: "08"
+          - heading "Retention" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Ongoing support and strategic growth services.
+    - generic [ref=e135]:
+      - heading "Ready To Build Your Next Digital Project?" [level=2] [ref=e136]
+      - paragraph [ref=e137]: Let’s discuss your business goals and how a tailored digital solution can help you achieve them.
+      - link "Start Your Project" [ref=e138] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e139]:
+    - generic [ref=e140]:
+      - generic [ref=e141]: ANTHONY MUHATI
+      - generic [ref=e142]:
+        - link "link LinkedIn" [ref=e143] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/anthony-muhati-a39b44381/
+          - generic [ref=e144]: link
+          - text: LinkedIn
+        - link "chat WhatsApp" [ref=e145] [cursor=pointer]:
+          - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+          - generic [ref=e146]: chat
+          - text: WhatsApp
+        - link "mail Email" [ref=e147] [cursor=pointer]:
+          - /url: https://mail.google.com/mail/?view=cm&fs=1&to=anthonymuhati52%40gmail.com
+          - generic [ref=e148]: mail
+          - text: Email
+        - link "GitHub" [ref=e149] [cursor=pointer]:
+          - /url: https://github.com/crypto-surgelitu
+          - img [ref=e150]
+          - text: GitHub
+      - generic [ref=e152]: © 2026 Anthony Muhati. All rights reserved.
+  - link "Chat with Anthony on WhatsApp" [ref=e153] [cursor=pointer]:
+    - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+    - img [ref=e154]
+  - alert [ref=e156]

@@ -6,7 +6,7 @@ import DeliveryStandard from "@/components/work/DeliveryStandard";
 import WorkCTA from "@/components/work/WorkCTA";
 
 export const metadata: Metadata = createMetadata({
-  title: "Work — Anthony Muhati Portfolio",
+  title: "Work",
   description:
     "Real projects built for real businesses. View case studies for Hippo Transfers & Adventures and BS1 Core — professional websites, apps, and business systems.",
   path: "/work",

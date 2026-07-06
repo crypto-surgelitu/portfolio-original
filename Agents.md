@@ -407,7 +407,7 @@ DNS:
 
 Email:
 
-* Resend
+* Brevo (via SMTP API)
 
 Messaging:
 
@@ -754,15 +754,17 @@ Single source of truth.
 
 ---
 
-# RESEND RULES
+# BREVO RULES
 
-Use Resend for:
+Use Brevo for:
 
 * Contact forms
 * Inquiry submissions
 * Project requests
 
 Do not introduce additional email services.
+
+Brevo is used via direct HTTPS API calls (no SDK dependency). The API key is configured via the `BREVO_API_KEY` environment variable.
 
 ---
 

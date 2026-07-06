@@ -8,7 +8,7 @@ import OperationalFramework from "@/components/about/OperationalFramework";
 import FounderNote from "@/components/about/FounderNote";
 
 export const metadata: Metadata = createMetadata({
-  title: "About — Anthony Muhati",
+  title: "About",
   description:
     "Designer & Developer building websites, apps, and business systems. Diploma in Business Information Technology with a focus on software development and design-first workflows.",
   path: "/about",

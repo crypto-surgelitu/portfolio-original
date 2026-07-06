@@ -7,7 +7,7 @@ import SolutionOutcome from "@/components/case-studies/hippo-transfers/SolutionO
 import CaseStudyCTA from "@/components/case-studies/hippo-transfers/CaseStudyCTA";
 
 export const metadata: Metadata = createMetadata({
-  title: "Hippo Transfers Case Study | Anthony Muhati",
+  title: "Hippo Transfers Case Study",
   description:
     "How we redesigned and rebuilt the booking platform for Hippo Transfers & Adventures — a mobile-first, high-performance safari booking experience.",
   path: "/work/hippo-transfers",

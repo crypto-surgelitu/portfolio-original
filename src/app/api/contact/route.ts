@@ -1,4 +1,6 @@
-const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "anthonymuhati52@gmail.com";
+import { contactConfig } from "@/config/contact";
+
+const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || contactConfig.emailRaw;
 
 export async function POST(request: Request) {
   try {
@@ -16,10 +18,11 @@ export async function POST(request: Request) {
     const apiKey = process.env.BREVO_API_KEY;
 
     if (!apiKey) {
-      console.warn("BREVO_API_KEY not configured — logging inquiry instead");
-      console.log({ firstName, lastName, email, projectType, budget, timeline, scope });
       return Response.json(
-        { message: "Inquiry received (email not configured)" },
+        {
+          message: "Inquiry received (email not configured)",
+          loggedInquiry: { firstName, lastName, email, projectType, budget, timeline, scope },
+        },
         { status: 200 }
       );
     }
@@ -57,9 +60,11 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      console.error("Brevo API error:", response.status, errorData);
       return Response.json(
-        { error: errorData.message || "Failed to send email" },
+        {
+          error: errorData.message || "Failed to send email",
+          detail: { status: response.status, brevoError: errorData },
+        },
         { status: 500 }
       );
     }

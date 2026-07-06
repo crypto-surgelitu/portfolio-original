@@ -1,0 +1,104 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - link "Anthony Muhati Logo Anthony Muhati Crafted for Growth" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+        - img "Anthony Muhati Logo" [ref=f4e5]
+        - generic [ref=f4e6]:
+          - generic [ref=f4e7]: Anthony Muhati
+          - generic [ref=f4e8]: Crafted for Growth
+      - navigation [ref=f4e9]:
+        - link "Home" [ref=f4e10] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f4e11] [cursor=pointer]:
+          - /url: /services
+        - link "Work" [ref=f4e12] [cursor=pointer]:
+          - /url: /work
+        - link "About" [ref=f4e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=f4e14] [cursor=pointer]:
+          - /url: /contact
+      - link "Start Your Project" [ref=f4e15] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f4e16]:
+    - generic [ref=f4e20]:
+      - generic [ref=f4e21]:
+        - generic [ref=f4e22]:
+          - paragraph [ref=f4e23]: Digital Solutions
+          - heading "Built To Elevate." [level=1] [ref=f4e24]
+          - paragraph [ref=f4e25]: Transforming complex business challenges into elegant, high-performance digital ecosystems. We engineer trust, authority, and measurable outcomes.
+        - generic [ref=f4e26]:
+          - link "Explore the Journey" [ref=f4e27] [cursor=pointer]:
+            - /url: "#work"
+          - link "Discuss a Project" [ref=f4e28] [cursor=pointer]:
+            - /url: /contact
+      - img "Digital Solutions Built To Elevate" [ref=f4e32]
+    - generic [ref=f4e35]:
+      - generic [ref=f4e36]:
+        - paragraph [ref=f4e37]: The Portfolio
+        - heading "Narratives of Transformation" [level=2] [ref=f4e38]
+      - generic [ref=f4e39]:
+        - generic [ref=f4e41]:
+          - generic [ref=f4e43]: "01"
+          - generic [ref=f4e44]
+          - img "Hippo Transfers website mockup on a laptop screen" [ref=f4e61]
+        - generic [ref=f4e62]:
+          - generic [ref=f4e64]: "02"
+          - generic [ref=f4e65]
+          - img "BS1 Core ERP dashboard mockup on a desktop screen" [ref=f4e82]
+    - generic [ref=f4e85]:
+      - generic [ref=f4e86]:
+        - paragraph [ref=f4e87]: Methodology
+        - heading "Standard of Delivery." [level=2] [ref=f4e88]
+        - paragraph [ref=f4e89]: A rigorous, architectural approach to digital creation. We do not just design screens; we build scalable business assets.
+      - generic [ref=f4e90]:
+        - generic [ref=f4e91]:
+          - generic: "01"
+          - generic [ref=f4e92]: architecture
+          - heading "Blueprint Strategy" [level=3] [ref=f4e93]
+          - paragraph [ref=f4e94]: Defining the foundational architecture, aligning business objectives with user psychology.
+        - generic [ref=f4e95]:
+          - generic: "02"
+          - generic [ref=f4e96]: design_services
+          - heading "Precision Design" [level=3] [ref=f4e97]
+          - paragraph [ref=f4e98]: Crafting minimalist, high-fidelity interfaces that prioritize clarity and premium aesthetic.
+        - generic [ref=f4e99]:
+          - generic: "03"
+          - generic [ref=f4e100]: code_blocks
+          - heading "Robust Engineering" [level=3] [ref=f4e101]
+          - paragraph [ref=f4e102]: Developing scalable, secure, and performant ecosystems built for longevity.
+        - generic [ref=f4e103]:
+          - generic: "04"
+          - generic [ref=f4e104]: monitoring
+          - heading "Continuous Optimization" [level=3] [ref=f4e105]
+          - paragraph [ref=f4e106]: Post-launch analysis and refinement to ensure sustained metric growth.
+    - generic [ref=f4e109]:
+      - heading "Ready to Elevate?" [level=2] [ref=f4e110]
+      - paragraph [ref=f4e111]: Partner with us to transform your digital presence into a measurable business asset. Let’s discuss your vision.
+      - link "Start your Project" [ref=f4e112] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f4e113]:
+    - generic [ref=f4e114]:
+      - generic [ref=f4e115]: ANTHONY MUHATI
+      - generic [ref=f4e116]:
+        - link "link LinkedIn" [ref=f4e117] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/anthony-muhati-a39b44381/
+          - generic [ref=f4e118]: link
+          - text: LinkedIn
+        - link "chat WhatsApp" [ref=f4e119] [cursor=pointer]:
+          - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+          - generic [ref=f4e120]: chat
+          - text: WhatsApp
+        - link "mail Email" [ref=f4e121] [cursor=pointer]:
+          - /url: https://mail.google.com/mail/?view=cm&fs=1&to=anthonymuhati52%40gmail.com
+          - generic [ref=f4e122]: mail
+          - text: Email
+        - link "GitHub" [ref=f4e123] [cursor=pointer]:
+          - /url: https://github.com/crypto-surgelitu
+          - img [ref=f4e124]
+          - text: GitHub
+      - generic [ref=f4e126]: © 2026 Anthony Muhati. All rights reserved.
+  - link "Chat with Anthony on WhatsApp" [ref=f4e127] [cursor=pointer]:
+    - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+    - img [ref=f4e128]
+  - alert [ref=f4e130]

@@ -1,0 +1,51 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Anthony Muhati Logo Anthony Muhati Crafted for Growth" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+        - img "Anthony Muhati Logo" [ref=f1e5]
+        - generic [ref=f1e6]:
+          - generic [ref=f1e7]: Anthony Muhati
+          - generic [ref=f1e8]: Crafted for Growth
+      - navigation [ref=f1e9]:
+        - link "Home" [ref=f1e10] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f1e11] [cursor=pointer]:
+          - /url: /services
+        - link "Work" [ref=f1e12] [cursor=pointer]:
+          - /url: /work
+        - link "About" [ref=f1e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=f1e14] [cursor=pointer]:
+          - /url: /contact
+      - link "Start Your Project" [ref=f1e15] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f1e16]:
+    - generic [ref=f1e18]:
+      - heading "404" [level=1] [ref=f1e19]
+      - heading "This page could not be found." [level=2] [ref=f1e21]
+  - contentinfo [ref=f1e22]:
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]: ANTHONY MUHATI
+      - generic [ref=f1e25]:
+        - link "link LinkedIn" [ref=f1e26] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/anthony-muhati-a39b44381/
+          - generic [ref=f1e27]: link
+          - text: LinkedIn
+        - link "chat WhatsApp" [ref=f1e28] [cursor=pointer]:
+          - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+          - generic [ref=f1e29]: chat
+          - text: WhatsApp
+        - link "mail Email" [ref=f1e30] [cursor=pointer]:
+          - /url: https://mail.google.com/mail/?view=cm&fs=1&to=anthonymuhati52%40gmail.com
+          - generic [ref=f1e31]: mail
+          - text: Email
+        - link "GitHub" [ref=f1e32] [cursor=pointer]:
+          - /url: https://github.com/crypto-surgelitu
+          - img [ref=f1e33]
+          - text: GitHub
+      - generic [ref=f1e35]: © 2026 Anthony Muhati. All rights reserved.
+  - link "Chat with Anthony on WhatsApp" [ref=f1e36] [cursor=pointer]:
+    - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+    - img [ref=f1e37]
+  - alert [ref=f1e39]

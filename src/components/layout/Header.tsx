@@ -35,7 +35,7 @@ export default function Header() {
             <span className="font-cormorant text-xl sm:text-2xl md:text-3xl font-semibold tracking-widest text-[#C8A97E] leading-none uppercase">
               Anthony Muhati
             </span>
-            <span className="font-cormorant text-[10px] sm:text-xs tracking-[0.3em] text-[#C8A97E]/60 uppercase mt-1 leading-none hidden sm:block">
+            <span className="font-cormorant text-[10px] sm:text-xs tracking-[0.3em] text-[#C8A97E] uppercase mt-1 leading-none hidden sm:block">
               Crafted for Growth
             </span>
           </div>

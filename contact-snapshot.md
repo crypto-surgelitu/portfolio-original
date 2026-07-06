@@ -1,0 +1,97 @@
+- generic [active] [ref=f5e1]:
+  - banner [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - link "Anthony Muhati Logo Anthony Muhati Crafted for Growth" [ref=f5e4] [cursor=pointer]:
+        - /url: /
+        - img "Anthony Muhati Logo" [ref=f5e5]
+        - generic [ref=f5e6]:
+          - generic [ref=f5e7]: Anthony Muhati
+          - generic [ref=f5e8]: Crafted for Growth
+      - navigation [ref=f5e9]:
+        - link "Home" [ref=f5e10] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f5e11] [cursor=pointer]:
+          - /url: /services
+        - link "Work" [ref=f5e12] [cursor=pointer]:
+          - /url: /work
+        - link "About" [ref=f5e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=f5e14] [cursor=pointer]:
+          - /url: /contact
+      - link "Start Your Project" [ref=f5e15] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f5e16]:
+    - generic [ref=f5e18]:
+      - paragraph [ref=f5e19]: Initiate Contact
+      - heading "Let’s Discuss Your Project" [level=1] [ref=f5e20]
+      - paragraph [ref=f5e21]: Partner to transform your business infrastructure. I engage with clients to deliver uncompromising technical excellence and strategic advantage.
+      - generic [ref=f5e22]:
+        - generic [ref=f5e23]: "Direct Inquiry:"
+        - link "anthonymuhati52@gmail.com" [ref=f5e24] [cursor=pointer]:
+          - /url: mailto:anthonymuhati52@gmail.com
+    - generic [ref=f5e27]:
+      - generic [ref=f5e29]:
+        - heading "Detailed Proposal Request" [level=2] [ref=f5e30]
+        - generic [ref=f5e31]:
+          - generic [ref=f5e32]
+          - generic [ref=f5e39]
+          - generic [ref=f5e42]
+          - generic [ref=f5e45]
+          - generic [ref=f5e52]
+          - button "Submit Inquiry" [ref=f5e55]
+      - generic [ref=f5e57]:
+        - heading "Engagement Process" [level=3] [ref=f5e58]
+        - generic [ref=f5e59]:
+          - generic [ref=f5e60]
+          - generic [ref=f5e66]
+          - generic [ref=f5e72]
+    - generic [ref=f5e79]:
+      - generic [ref=f5e80]:
+        - heading "What Happens After You Reach Out?" [level=2] [ref=f5e81]
+        - paragraph [ref=f5e82]: A transparent, structured process designed to respect your time and ensure mutual fit.
+      - generic [ref=f5e83]:
+        - generic [ref=f5e84]:
+          - generic [ref=f5e85]: "01"
+          - heading "Initial Review" [level=3] [ref=f5e86]
+          - paragraph [ref=f5e87]: I personally review your inquiry within 24 hours to assess technical feasibility and strategic alignment.
+        - generic [ref=f5e88]:
+          - generic [ref=f5e89]: "02"
+          - heading "Discovery Call" [level=3] [ref=f5e90]
+          - paragraph [ref=f5e91]: A focused 30-minute consultation to deeply understand your business context and defining success.
+        - generic [ref=f5e92]:
+          - generic [ref=f5e93]: "03"
+          - heading "Strategic Proposal" [level=3] [ref=f5e94]
+          - paragraph [ref=f5e95]: You receive a detailed roadmap outlining architecture, timelines, payment plan, and expected ROI.
+        - generic [ref=f5e96]:
+          - generic [ref=f5e97]: "04"
+          - heading "Agreement" [level=3] [ref=f5e98]
+          - paragraph [ref=f5e99]: Refining the scope and executing necessary contracts and payment plans to secure partnership and ensure clarity.
+        - generic [ref=f5e100]:
+          - generic [ref=f5e101]: "05"
+          - heading "Onboarding" [level=3] [ref=f5e102]
+          - paragraph [ref=f5e103]: Establishing communication channels, access protocols, and initiating the first phase of work.
+  - contentinfo [ref=f5e104]:
+    - generic [ref=f5e105]:
+      - generic [ref=f5e106]: ANTHONY MUHATI
+      - generic [ref=f5e107]:
+        - link "link LinkedIn" [ref=f5e108] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/anthony-muhati-a39b44381/
+          - generic [ref=f5e109]: link
+          - text: LinkedIn
+        - link "chat WhatsApp" [ref=f5e110] [cursor=pointer]:
+          - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+          - generic [ref=f5e111]: chat
+          - text: WhatsApp
+        - link "mail Email" [ref=f5e112] [cursor=pointer]:
+          - /url: https://mail.google.com/mail/?view=cm&fs=1&to=anthonymuhati52%40gmail.com
+          - generic [ref=f5e113]: mail
+          - text: Email
+        - link "GitHub" [ref=f5e114] [cursor=pointer]:
+          - /url: https://github.com/crypto-surgelitu
+          - img [ref=f5e115]
+          - text: GitHub
+      - generic [ref=f5e117]: © 2026 Anthony Muhati. All rights reserved.
+  - link "Chat with Anthony on WhatsApp" [ref=f5e118] [cursor=pointer]:
+    - /url: https://wa.me/254712924020?text=Hi%20Anthony%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project.
+    - img [ref=f5e119]
+  - alert [ref=f5e121]

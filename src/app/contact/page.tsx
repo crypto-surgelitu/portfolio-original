@@ -6,7 +6,7 @@ import EngagementTimeline from "@/components/contact/EngagementTimeline";
 import SpiralJourney from "@/components/contact/SpiralJourney";
 
 export const metadata: Metadata = createMetadata({
-  title: "Contact — Anthony Muhati",
+  title: "Contact",
   description:
     "Initiate contact with Anthony Muhati. Discuss your website, app, or business system project through a structured engagement process.",
   path: "/contact",

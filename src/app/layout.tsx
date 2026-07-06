@@ -3,6 +3,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
 import { validateEnv } from "@/config/env";
+import { hankenGrotesk, inter, cormorantGaramond } from "@/config/fonts";
 
 validateEnv();
 import Header from "@/components/layout/Header";
@@ -95,9 +96,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="dark" lang="en">
+    <html className={`dark ${hankenGrotesk.variable} ${inter.variable} ${cormorantGaramond.variable}`} lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Inter:wght@400;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
