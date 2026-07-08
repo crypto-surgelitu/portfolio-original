@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-4 md:gap-5">
           <Image
             src="/logos/monogram-v2.webp"
-            alt="Anthony Muhati Logo"
+            alt="Anthony Muhati monogram logo — Back to Home"
             width={112}
             height={167}
             className="w-20 md:w-24 lg:w-28 xl:w-28 h-auto"
@@ -46,7 +46,7 @@ export default function Header() {
           {navLinks.map((link) => (
             <Link 
               key={link.name}
-              className="font-button text-button text-on-surface-variant hover:text-primary transition-colors duration-300" 
+              className="font-button text-button text-on-surface-variant hover:text-primary transition-colors duration-300 inline-flex items-center min-h-[44px] px-2" 
               href={link.href}
             >
               {link.name}
@@ -64,7 +64,7 @@ export default function Header() {
         {/* Mobile Menu Toggle button: touch target is 48px to comply with accessibility standard */}
         <button 
           onClick={toggleMenu}
-          className="md:hidden text-on-surface flex items-center justify-center w-12 h-12 rounded focus:outline-none focus:ring-2 focus:ring-primary-container"
+          className="md:hidden text-on-surface flex items-center justify-center min-w-[44px] w-12 h-12 rounded focus:outline-none focus:ring-2 focus:ring-primary-container"
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
         >
@@ -82,7 +82,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 onClick={() => setIsMenuOpen(false)}
-                className="font-button text-button text-on-surface-variant hover:text-primary py-3 px-4 rounded hover:bg-surface-elevated transition-colors duration-200"
+                className="font-button text-button text-on-surface-variant hover:text-primary py-3.5 px-4 rounded hover:bg-surface-elevated transition-colors duration-200"
                 href={link.href}
               >
                 {link.name}

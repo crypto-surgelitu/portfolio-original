@@ -44,6 +44,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.png", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png" }],
@@ -58,36 +59,113 @@ const jsonLd = {
       "@id": `${siteConfig.url}/#person`,
       "name": siteConfig.name,
       "url": siteConfig.url,
+      "image": `${siteConfig.url}${siteConfig.ogImage}`,
       "sameAs": [
         contactConfig.linkedin,
-        contactConfig.github
+        contactConfig.github,
       ],
       "jobTitle": "Designer & Developer",
-      "description": "Professional digital products built through a structured design-first process."
+      "description":
+        "Professional websites, web applications, mobile apps, and business systems built through a structured design-first process. Based in Mombasa, Kenya.",
+      "knowsAbout": [
+        "Web Development",
+        "Web Application Development",
+        "Mobile App Development",
+        "ERP Systems",
+        "Business Software",
+        "UI/UX Design",
+        "Custom Software Development",
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mombasa",
+        "addressCountry": "KE",
+      },
     },
     {
       "@type": "WebSite",
       "@id": `${siteConfig.url}/#website`,
       "url": siteConfig.url,
-      "name": `${siteConfig.name} Portfolio`,
+      "name": `${siteConfig.name} — Designer & Developer Portfolio`,
+      "description": siteConfig.description,
       "publisher": {
-        "@id": `${siteConfig.url}/#person`
-      }
+        "@id": `${siteConfig.url}/#person`,
+      },
+      "inLanguage": "en-US",
     },
     {
       "@type": "ProfessionalService",
       "@id": `${siteConfig.url}/#service`,
       "name": `${siteConfig.name} Digital Solutions`,
       "image": `${siteConfig.url}${siteConfig.ogImage}`,
+      "description":
+        "Design-first development of websites, web apps, mobile apps, and business systems for modern businesses in Mombasa, Kenya.",
       "priceRange": "$$",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Mombasa",
+        },
+        {
+          "@type": "Country",
+          "name": "Kenya",
+        },
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mombasa",
-        "addressCountry": "KE"
+        "addressCountry": "KE",
       },
-      "url": siteConfig.url
-    }
-  ]
+      "url": siteConfig.url,
+      "telephone": contactConfig.whatsapp,
+      "email": contactConfig.emailRaw,
+      "sameAs": [
+        contactConfig.linkedin,
+        contactConfig.github,
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Development",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Development",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ERP & Business Systems",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Software Development",
+            },
+          },
+        ],
+      },
+    },
+  ],
 };
 
 export default function RootLayout({

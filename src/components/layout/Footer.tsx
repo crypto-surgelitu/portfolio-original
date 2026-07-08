@@ -14,7 +14,7 @@ export default function Footer() {
         
         <div className="flex flex-wrap justify-center gap-6">
           <a 
-            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300" 
+            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300 min-h-[44px] py-2.5" 
             href={contactConfig.linkedin}
             target="_blank"
             rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a 
-            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300" 
+            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300 min-h-[44px] py-2.5" 
             href={contactConfig.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
@@ -32,7 +32,7 @@ export default function Footer() {
             WhatsApp
           </a>
           <a 
-            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300" 
+            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300 min-h-[44px] py-2.5" 
             href={GMAIL_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export default function Footer() {
             Email
           </a>
           <a 
-            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300" 
+            className="flex items-center gap-2 font-body-md text-body-md text-text-muted hover:text-primary transition-colors duration-300 min-h-[44px] py-2.5" 
             href={contactConfig.github}
             target="_blank"
             rel="noopener noreferrer"

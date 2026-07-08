@@ -6,9 +6,9 @@ import DeliveryStandard from "@/components/work/DeliveryStandard";
 import WorkCTA from "@/components/work/WorkCTA";
 
 export const metadata: Metadata = createMetadata({
-  title: "Work",
+  title: "Portfolio & Case Studies",
   description:
-    "Real projects built for real businesses. View case studies for Hippo Transfers & Adventures and BS1 Core — professional websites, apps, and business systems.",
+    "Explore real-world projects by Anthony Muhati: Hippo Transfers & Adventures tourism website and BS1 Core ERP booking system. See how design-first development delivers measurable results for businesses in Mombasa, Kenya.",
   path: "/work",
 });
 

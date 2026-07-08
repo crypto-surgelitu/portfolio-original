@@ -8,9 +8,9 @@ import OperationalFramework from "@/components/about/OperationalFramework";
 import FounderNote from "@/components/about/FounderNote";
 
 export const metadata: Metadata = createMetadata({
-  title: "About",
+  title: "About — Designer & Developer from Mombasa",
   description:
-    "Designer & Developer building websites, apps, and business systems. Diploma in Business Information Technology with a focus on software development and design-first workflows.",
+    "Learn about Anthony Muhati, a Designer & Developer based in Mombasa, Kenya. Diploma in Business Information Technology, specializing in websites, web apps, mobile apps, and business systems through a structured design-first workflow.",
   path: "/about",
 });
 

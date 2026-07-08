@@ -7,7 +7,7 @@ export default function Logo() {
       <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg bg-white/[0.12] border border-white/[0.15]">
         <Image
           src="/logos/monogram-v2.webp"
-          alt="AM"
+          alt="Anthony Muhati — Back to Home"
           width={784}
           height={1168}
           className="h-[70%] w-auto object-contain"

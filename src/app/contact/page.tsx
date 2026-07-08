@@ -6,9 +6,9 @@ import EngagementTimeline from "@/components/contact/EngagementTimeline";
 import SpiralJourney from "@/components/contact/SpiralJourney";
 
 export const metadata: Metadata = createMetadata({
-  title: "Contact",
+  title: "Start a Project — Get in Touch",
   description:
-    "Initiate contact with Anthony Muhati. Discuss your website, app, or business system project through a structured engagement process.",
+    "Ready to build a website, web app, mobile app, or business system? Contact Anthony Muhati in Mombasa, Kenya to start your project through a structured, design-first engagement process.",
   path: "/contact",
 });
 

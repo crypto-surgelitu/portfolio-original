@@ -7,9 +7,9 @@ import TechnicalSolution from "@/components/case-studies/bs1/TechnicalSolution";
 import OutcomeCTA from "@/components/case-studies/bs1/OutcomeCTA";
 
 export const metadata: Metadata = createMetadata({
-  title: "BS1 Booking System Case Study",
+  title: "BS1 Core — ERP Booking System for SwahiliPot Hub",
   description:
-    "How we built a full-stack room booking system for SwahiliPot Hub — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined operations.",
+    "Case study: How we built a full-stack room booking and ERP system for SwahiliPot Hub in Mombasa — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined business operations.",
   path: "/work/bs1",
   ogImage: "/assets/bs1-system-v2.webp",
   ogType: "article",

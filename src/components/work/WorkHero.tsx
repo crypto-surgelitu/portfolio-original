@@ -55,7 +55,7 @@ export default function WorkHero() {
           <div className="absolute inset-0 rounded-xl overflow-hidden border border-border-subtle hero-3d-element bg-surface-elevated animate-spiral-float">
             <div className="absolute inset-0 flex items-center justify-center text-text-muted">
               <Image
-                alt="Digital Solutions Built To Elevate"
+                alt="Multi-device mockup showing Anthony Muhati's portfolio dashboard on laptop, tablet, and smartphone screens"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
                 src="/assets/hero-mockup.webp"
                 width={800}

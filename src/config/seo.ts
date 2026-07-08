@@ -30,16 +30,16 @@ export function createMetadata({
       description,
       url,
       siteName: siteConfig.name,
+      locale: "en_US",
+      type: ogType,
       images: [
         {
           url: image,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: `${siteConfig.name} — ${title}`,
         },
       ],
-      locale: "en_US",
-      type: ogType,
     },
     twitter: {
       card: "summary_large_image",
