@@ -9,6 +9,7 @@ validateEnv();
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -189,6 +190,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <Analytics />
       </body>
     </html>
   );

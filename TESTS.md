@@ -1449,3 +1449,19 @@ icons: {
 - Pattern matches AGENTS.md motion principle: "Use motion to support hierarchy."
 
 *Fixed 2026-07-08*
+
+---
+
+## Vercel Analytics Setup — 2026-07-08
+
+| Item | Detail |
+|------|--------|
+| **Package installed** | `@vercel/analytics` via npm |
+| **File modified** | `src/app/layout.tsx` — added `import { Analytics } from "@vercel/analytics/next"` and rendered `<Analytics />` inside `<body>` after `<FloatingWhatsApp />` |
+| **Build verification** | `npm run build` — Compiled successfully, TypeScript passed, all pages generated, zero errors |
+| **Import path note** | Vercel docs confirm `@vercel/analytics/next` for Next.js App Router (not `@vercel/analytics/react`, which is for Create React App) |
+
+### DEFERRED UNTIL POST-DEPLOYMENT
+| Item | Why |
+|------|-----|
+| Confirm Analytics fires on page views | `@vercel/analytics` only starts collecting data once deployed to Vercel. Cannot verify locally. Check Vercel dashboard Analytics tab after deployment and verify `/_vercel/insights/view` network requests appear in browser DevTools on the live site. |
