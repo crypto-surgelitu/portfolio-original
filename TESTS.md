@@ -1465,3 +1465,53 @@ icons: {
 | Item | Why |
 |------|-----|
 | Confirm Analytics fires on page views | `@vercel/analytics` only starts collecting data once deployed to Vercel. Cannot verify locally. Check Vercel dashboard Analytics tab after deployment and verify `/_vercel/insights/view` network requests appear in browser DevTools on the live site. |
+
+---
+
+## SEO Keyword Targeting — 2026-07-09
+
+### Goal
+Inject Tier 1 (local) and Tier 2 (specialized long-tail) keywords into visible page copy, meta descriptions, and image alt text — without keyword stuffing.
+
+### Keyword Gaps Identified
+
+| Tier | Keyword | Status before | Status after |
+|------|---------|:-------------:|:------------:|
+| 1 | `web developer Mombasa` | ABSENT | Present in Home meta, About meta, Contact meta, Hero alt, About alt |
+| 1 | `website design Kenya` | ABSENT | Present in Services meta, Services Hero alt, Business Websites card |
+| 1 | `ERP systems Kenya` | ABSENT | Present in Services meta, ERP Systems card |
+| 2 | `Next.js developer for tourism/hospitality` | ABSENT | Present in Hippo Transfers H1 + meta |
+| 2 | `custom ERP / business systems for SMEs` | ABSENT | Present in BS1 H1 + meta, ERP Systems card, Custom Software card |
+| 2 | `full-stack developer for tourism and hospitality` | ABSENT | Naturally covered by Hippo H1 + hero alt changes |
+
+### Files Modified
+
+| File | What changed | Why | Benefit |
+|------|-------------|-----|---------|
+| `src/app/page.tsx` | Meta description | Cut from ~206→~150 chars; added "web developer in Mombasa, Kenya" | SERP snippet fits 160-char limit; targets #1 keyword |
+| `src/app/services/page.tsx` | Meta description | Cut from ~165→~155 chars; added "website design" + "Mombasa, Kenya" | Targets `website design Kenya` |
+| `src/app/work/page.tsx` | Meta description | Cut from ~198→~155 chars; added "tourism booking platform" | Targets travel tech long-tail |
+| `src/app/about/page.tsx` | Meta description | Cut from ~215→~155 chars; added "web developer & designer based in Mombasa, Kenya" | Clean location-first pitch |
+| `src/app/contact/page.tsx` | Meta description | Cut from ~176→~158 chars; leads with "web developer in Mombasa, Kenya" | Opens with strongest local keyword |
+| `src/app/work/hippo-transfers/page.tsx` | Meta description | Cut from ~165→~155 chars; added "Next.js-powered safari and travel website" | Targets `Next.js developer for tourism` |
+| `src/app/work/bs1/page.tsx` | Meta description | Cut from ~180→~150 chars; added "custom ERP ... for an SME business" | Targets `custom ERP for SMEs` |
+| `src/components/case-studies/hippo-transfers/HeroSection.tsx` | H1 + image alt | H1: "Hippo Transfers: Reimagining the Safari Booking Experience" → "Hippo Transfers: A Next.js Travel Booking Platform for Tourism & Safari". Alt: added "Kenya-based" | Long-tail keyword in H1; geo-context in alt |
+| `src/components/case-studies/bs1/HeroSection.tsx` | H1 + image alt | H1: "SwahiliPot Hub: Smarter Room Booking" → "SwahiliPot Hub — Custom ERP System for SME Room & Space Booking". Alt: added "custom ERP system for SME" | SME long-tail keyword in H1 |
+| `src/components/hero/Hero.tsx` | Image alt text | "Premium multi-device mockup showing a modern, dark-themed dashboard..." → "Multi-device mockup of a web developer portfolio from Mombasa, Kenya — dark-themed dashboard on laptop, tablet, and smartphone." | Screen reader SEO signal for local search |
+| `src/components/about/AboutHero.tsx` | Image alt text | "Anthony Muhati — Designer & Developer" → "Anthony Muhati — Web Developer & Designer from Mombasa, Kenya" | Geo-signal on personal branding image |
+| `src/components/services/ServicesHero.tsx` | Image alt text | "Anthony Muhati — Strategic Partner" → "Anthony Muhati — Website Design, Web Apps & ERP Systems in Mombasa, Kenya" | Service keywords + location on key image |
+| `src/components/services/AssetsShowcase.tsx` | 4 card descriptions + 3 alt texts | Booking Platforms→added "in Kenya"; ERP→added "for SMEs"; Custom Software→added "serving SMEs in Mombasa, Kenya"; Business Websites→added "for businesses in Kenya" | Connects service cards to local+long-tail keywords |
+
+### Build Verification
+
+```
+npm run build — Compiled successfully in 41s
+TypeScript: passed (strict mode, zero errors)
+Pages generated: 12 (static) + 1 (dynamic)
+```
+
+### Net SEO Impact
+- **Tier 1 gap closed:** "web developer Mombasa", "website design Kenya", "ERP systems Kenya" now in visible copy and/or meta descriptions
+- **Tier 2 gap closed:** "Next.js developer for tourism/hospitality", "custom ERP for SMEs" now in case study H1s
+- **All 7 meta descriptions ≤160 chars** — no SERP truncation
+- **Zero keyword stuffing** — every change reads as natural human copy

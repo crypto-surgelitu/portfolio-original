@@ -9,7 +9,7 @@ const services = [
     number: "01",
     title: "Business Websites",
     description:
-      "High-performance corporate platforms engineered to establish authority and drive lead generation.",
+      "High-performance corporate websites engineered to establish authority and drive lead generation for businesses in Kenya.",
     features: ["Corporate Identity", "Lead Capture Systems"],
     image: "/assets/services-website.webp",
     alt: "High-fidelity mockup of a professional business website displayed on desktop.",
@@ -18,10 +18,10 @@ const services = [
     number: "02",
     title: "Booking Platforms",
     description:
-      "Seamless reservation ecosystems for hospitality, tourism, and service-based enterprises.",
+      "Seamless reservation ecosystems for tourism, hospitality, and service-based enterprises in Kenya.",
     features: ["Real-time Availability", "Payment Integration"],
     image: "/assets/services-booking.webp",
-    alt: "Premium high-fidelity mockup of a sophisticated booking platform interface.",
+    alt: "High-fidelity mockup of a tourism booking platform interface for safari and travel businesses in Kenya.",
   },
   {
     number: "03",
@@ -45,10 +45,10 @@ const services = [
     number: "05",
     title: "ERP Systems",
     description:
-      "Enterprise Resource Planning solutions to unify business processes and data.",
+      "Custom ERP systems for SMEs to unify business processes, data, and operations.",
     features: ["Resource Management", "Process Automation"],
     image: "/assets/services-erp.webp",
-    alt: "High-fidelity mockup of a complex ERP business system showing administrative interfaces.",
+    alt: "High-fidelity mockup of a custom ERP system for SME business management and operations.",
   },
   {
     number: "06",
@@ -90,10 +90,10 @@ const services = [
     number: "10",
     title: "Custom Software",
     description:
-      "Tailor-made digital solutions for unique challenges that off-the-shelf software can&rsquo;t solve.",
+      "Tailor-made digital solutions for unique business challenges \u2014 serving SMEs in Mombasa, Kenya and beyond.",
     features: ["Bespoke Logic", "Competitive Advantage"],
     image: "/assets/services-custom.webp",
-    alt: "High-fidelity mockup of a professional mobile application representing custom software design.",
+    alt: "High-fidelity mockup of a custom software application designed for businesses in Mombasa, Kenya.",
   },
   {
     number: "11",

@@ -9,7 +9,7 @@ import CaseStudyCTA from "@/components/case-studies/hippo-transfers/CaseStudyCTA
 export const metadata: Metadata = createMetadata({
   title: "Hippo Transfers & Adventures — Tourism Website Redesign",
   description:
-    "Case study: How we redesigned and rebuilt the booking platform for Hippo Transfers & Adventures — a mobile-first, high-performance tourism and safari booking website optimized for conversion and user experience.",
+    "Case study: How we built a mobile-first tourism booking platform for Hippo Transfers & Adventures — a Next.js-powered safari and travel website optimized for conversion, serving travelers across Kenya.",
   path: "/work/hippo-transfers",
   ogImage: "/assets/hippo-transfers.webp",
   ogType: "article",

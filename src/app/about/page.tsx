@@ -10,7 +10,7 @@ import FounderNote from "@/components/about/FounderNote";
 export const metadata: Metadata = createMetadata({
   title: "About — Designer & Developer from Mombasa",
   description:
-    "Learn about Anthony Muhati, a Designer & Developer based in Mombasa, Kenya. Diploma in Business Information Technology, specializing in websites, web apps, mobile apps, and business systems through a structured design-first workflow.",
+    "Learn about Anthony Muhati, a web developer & designer based in Mombasa, Kenya. Specializing in websites, web apps, mobile apps, and business systems.",
   path: "/about",
 });
 

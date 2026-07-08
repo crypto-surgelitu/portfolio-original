@@ -10,7 +10,7 @@ import ContactCTA from "@/components/contact/ContactCTA";
 export const metadata: Metadata = createMetadata({
   title: "Designer & Developer — Mombasa, Kenya",
   description:
-    "Anthony Muhati builds professional websites, web applications, mobile apps, and business systems for modern businesses in Mombasa, Kenya and beyond. Design-first development with a focus on conversion, performance, and mobile-first experiences.",
+    "Anthony Muhati \u2014 web developer in Mombasa, Kenya. Building websites, web apps, mobile apps, and ERP systems with design-first development for conversion and performance.",
   path: "/",
 });
 

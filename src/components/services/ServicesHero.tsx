@@ -46,7 +46,7 @@ export default function ServicesHero() {
           <div className="absolute inset-0 bg-primary/10 rounded-xl blur-3xl -z-10" />
           <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface-elevated">
             <Image
-              alt="Anthony Muhati — Strategic Partner"
+              alt="Anthony Muhati — Website Design, Web Apps & ERP Systems in Mombasa, Kenya"
               src="/assets/services-hero.webp"
               width={600}
               height={600}

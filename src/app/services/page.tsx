@@ -9,7 +9,7 @@ import ServicesCTA from "@/components/services/ServicesCTA";
 export const metadata: Metadata = createMetadata({
   title: "Services — Strategic Digital Partner",
   description:
-    "From business websites and booking platforms to ERP systems and custom software — Anthony Muhati architects digital ecosystems that drive measurable outcomes for modern businesses.",
+    "Website design, booking platforms, ERP systems, and custom software — Anthony Muhati builds digital products for businesses in Mombasa, Kenya and beyond.",
   path: "/services",
   ogImage: "/assets/services-hero.webp",
 });

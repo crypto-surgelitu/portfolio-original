@@ -22,7 +22,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface"
           >
-            Hippo Transfers: Reimagining the Safari Booking Experience
+            Hippo Transfers: A Next.js Travel Booking Platform for Tourism &amp; Safari
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function HeroSection() {
         >
           <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface-elevated smooth-hover">
             <Image
-              alt="High-fidelity mockup of the Hippo Transfers & Adventures travel and tourism website displayed on a laptop, showcasing the hero section with safari imagery and booking interface."
+              alt="High-fidelity mockup of the Hippo Transfers & Adventures Kenya-based tourism and safari booking website displayed on a laptop."
               src="/assets/hippo-transfers.webp"
               width={1200}
               height={675}

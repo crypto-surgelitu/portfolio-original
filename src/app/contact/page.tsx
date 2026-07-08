@@ -8,7 +8,7 @@ import SpiralJourney from "@/components/contact/SpiralJourney";
 export const metadata: Metadata = createMetadata({
   title: "Start a Project — Get in Touch",
   description:
-    "Ready to build a website, web app, mobile app, or business system? Contact Anthony Muhati in Mombasa, Kenya to start your project through a structured, design-first engagement process.",
+    "Start your project with a web developer in Mombasa, Kenya. Websites, web apps, mobile apps, and business systems \u2014 built through a design-first process.",
   path: "/contact",
 });
 

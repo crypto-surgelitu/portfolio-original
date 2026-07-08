@@ -48,7 +48,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px]"></div>
           <Image 
-            alt="Premium multi-device mockup showing a modern, dark-themed dashboard on a laptop, tablet, and smartphone. The devices are floating slightly above a sleek black surface, softly illuminated by warm, high-end studio lighting, conveying a sense of luxury and technological sophistication." 
+            alt="Multi-device mockup of a web developer portfolio from Mombasa, Kenya \u2014 dark-themed dashboard on laptop, tablet, and smartphone." 
             className="w-full h-full object-contain relative z-10" 
             src="/assets/hero-mockup.webp"
             width={700}

@@ -8,7 +8,7 @@ import WorkCTA from "@/components/work/WorkCTA";
 export const metadata: Metadata = createMetadata({
   title: "Portfolio & Case Studies",
   description:
-    "Explore real-world projects by Anthony Muhati: Hippo Transfers & Adventures tourism website and BS1 Core ERP booking system. See how design-first development delivers measurable results for businesses in Mombasa, Kenya.",
+    "See real projects: Hippo Transfers tourism booking platform and BS1 Core ERP system. Design-first development for businesses in Mombasa, Kenya.",
   path: "/work",
 });
 

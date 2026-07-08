@@ -17,7 +17,7 @@ export default function HeroSection() {
             Case Study
           </span>
           <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">
-            SwahiliPot Hub: Smarter Room Booking
+            SwahiliPot Hub \u2014 Custom ERP System for SME Room &amp; Space Booking
           </h1>
           <p className="font-body-lg text-body-lg text-text-muted max-w-2xl">
             The Swahili Pot Hub Room Booking System is a full-stack digital platform designed to streamline the reservation and management of creative spaces, meeting rooms, and training hubs. By transitioning from manual paperwork to an automated workflow, the system enhances operational efficiency for the hub.
@@ -30,7 +30,7 @@ export default function HeroSection() {
           className="w-full md:w-1/2"
         >
           <Image
-            alt="High-fidelity mockup of the BS1 Core ERP dashboard displaying administrative controls, scheduling interface, and resource management panels."
+            alt="High-fidelity mockup of the BS1 Core custom ERP system dashboard for SME room booking \u2014 administrative controls, scheduling, and resource panels."
             src="/assets/bs1-system-v2.webp"
             width={700}
             height={391}

@@ -9,7 +9,7 @@ import OutcomeCTA from "@/components/case-studies/bs1/OutcomeCTA";
 export const metadata: Metadata = createMetadata({
   title: "BS1 Core — ERP Booking System for SwahiliPot Hub",
   description:
-    "Case study: How we built a full-stack room booking and ERP system for SwahiliPot Hub in Mombasa — transitioning from manual paperwork to automated scheduling, real-time availability, and streamlined business operations.",
+    "Case study: How we built a custom ERP and room booking system for SwahiliPot Hub in Mombasa — automating scheduling, real-time availability, and operations for an SME business.",
   path: "/work/bs1",
   ogImage: "/assets/bs1-system-v2.webp",
   ogType: "article",
