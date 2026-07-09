@@ -219,7 +219,7 @@ export default function AssetsShowcase() {
                   src={service.image}
                   width={600}
                   height={400}
-                  className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 hover-mixblend transition-all duration-700"
                 />
               </div>
             </div>

@@ -70,7 +70,7 @@ export default function CapabilitiesGrid() {
             <div className="h-64 relative overflow-hidden">
               <Image
                 alt={cap.imageAlt}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                className="w-full h-full object-cover hover-grayscale transition-all duration-700 scale-110 group-hover:scale-100"
                 src={cap.image}
                 width={600}
                 height={400}

@@ -55,7 +55,7 @@ function ChallengeCard({
           src={challenge.image}
           width={450}
           height={256}
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+          className="w-full h-full object-cover hover-grayscale transition-all duration-700 scale-110 group-hover:scale-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated to-transparent opacity-60" />
       </div>

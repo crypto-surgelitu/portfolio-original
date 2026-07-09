@@ -50,7 +50,7 @@ export default function ServicesHero() {
               src="/assets/services-hero.webp"
               width={600}
               height={600}
-              className="w-full h-auto object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+              className="w-full h-auto object-cover opacity-90 hover-mixblend transition-all duration-700"
               priority
             />
           </div>

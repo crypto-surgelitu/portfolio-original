@@ -180,3 +180,20 @@
   0% { transform: rotateX(2deg) rotateY(-2deg) translateZ(0); }
   100% { transform: rotateX(-3deg) rotateY(3deg) translateZ(15px); }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-grayscale {
+    filter: grayscale(100%);
+  }
+  .group:hover .hover-grayscale {
+    filter: grayscale(0%);
+  }
+
+  .hover-mixblend {
+    mix-blend-mode: luminosity;
+  }
+  .hover-mixblend:hover,
+  .group:hover .hover-mixblend {
+    mix-blend-mode: normal;
+  }
+}
