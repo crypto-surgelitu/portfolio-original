@@ -22,15 +22,17 @@ const projectTypes = [
   "Other",
 ];
 
+const KES_TO_USD = 129;
+
 const budgets = [
-  "Below KSh 50,000",
-  "KSh 50,000 - 100,000",
-  "KSh 100,000 - 250,000",
-  "KSh 250,000+",
+  "Below KSh 50,000 (~$387)",
+  "KSh 50,000 - 100,000 (~$387 - $774)",
+  "KSh 100,000 - 250,000 (~$774 - $1,935)",
+  "KSh 250,000+ (~$1,935+)",
   "Not Sure Yet",
 ];
 
-const timelines = ["ASAP", "1 Month", "2-3 Months", "Flexible"];
+const timelines = ["1-2 Weeks", "3-4 Weeks", "1-2 Months", "3+ Months", "Flexible"];
 
 const initialForm: FormData = {
   firstName: "",
