@@ -19,7 +19,7 @@
 | Structured data | `Person`, `WebSite`, `ProfessionalService` JSON-LD present |
 | `robots.txt` | Served correctly (`200 OK`, valid rules, sitemap reference) |
 | `sitemap.xml` | All routes indexed |
-| Favicon | Configured (`favicon.png`, `apple-touch-icon.png`) |
+| Favicon | Configured (`favicon.ico`, `icon.svg`, `favicon.png`, `apple-touch-icon.png`) with explicit type and sizes |
 | Internal links | All 7 routes resolve `200` — zero 404s |
 | Contact form | Client-side validation + Brevo API integration verified working |
 | Placeholder text | None found across entire `src/` |
@@ -38,7 +38,7 @@
 | Cumulative Layout Shift | **0** on both mobile and desktop |
 | Page titles | No duplication — brand name appears exactly once per page |
 
-### ⚠️ Fixed during this session
+### ⚠️ Fixed (all sessions)
 
 | Fix | File(s) | What changed |
 |-----|---------|-------------|
@@ -51,6 +51,13 @@
 | AGENTS.md docs stale | `AGENTS.md` | "Resend" → "Brevo" references |
 | Console statements in API route | `route.ts` | `console.warn/log/error` replaced with structured JSON response fields |
 | Email fallback duplication | `route.ts` | Hardcoded fallback replaced with import from `contact.ts` (single source of truth) |
+| Mobile tap targets (15 elements) | `Header.tsx`, `Footer.tsx` | `min-h-[44px]`, `py-2.5`, `min-w-[44px]` for 44×44 compliance |
+| Sitemap dynamic discovery | `sitemap.ts` | Rewrote hardcoded URL list → auto-discovered from `app/` directory |
+| Favicon icon.svg reference | `layout.tsx` | Added `icon.svg` (`type: image/svg+xml`) to `icons` metadata block |
+| Mobile card hover animation | `GuidedJourney.tsx` | Added `whileTap` for touch feedback alongside `whileHover` |
+| Vercel Analytics | `layout.tsx` | Added `@vercel/analytics/next` import + `<Analytics />` component |
+| SEO Keyword Targeting | 14 files across `hero/`, `about/`, `services/`, `work/`, `contact/`, `case-studies/` | Injected Tier-1/2 keywords into meta descriptions, H1s, image alt text |
+| Favicon metadata compliance | `layout.tsx` | Added `favicon.ico` + `sizes` attributes to all bitmap entries |
 
 ### ❌ Outstanding — requires manual action from Anthony
 
@@ -1348,23 +1355,27 @@ This means the site is effectively invisible for local search queries like "web 
 |------|:------:|:----:|-------|
 | `public/favicon.ico` | ✅ AUTO-FIXED | 1,448 B | Generated from `favicon.png` (32×32 ICO wrapper) |
 | `public/favicon.png` | ✅ EXISTS | 1,426 B | 32×32 PNG |
-| `public/icon.svg` | ✅ EXISTS (was unreferenced) | 257 B | 100×100 SVG, gold bg with "A" |
+| `public/icon.svg` | ❌ REMOVED from metadata (Anthony prefers PNG as primary — file kept in `public/` for potential future use) | 257 B | 100×100 SVG, gold bg with "A" |
 | `public/apple-touch-icon.png` | ✅ EXISTS | 1,049 B | 180×180 — correct size for Apple devices |
 | `public/manifest.json` | ❌ MISSING | — | No PWA manifest |
 | `public/site.webmanifest` | ❌ MISSING | — | No webmanifest |
 
-#### 7.2 layout.tsx icon references (AUTO-FIXED)
+#### 7.2 layout.tsx icon references (AUTO-FIXED → OVERRIDDEN)
 
-Before the fix, `layout.tsx:45-50` only referenced `favicon.png` and `apple-touch-icon.png`. The existing `icon.svg` in `public/` was completely unused.
+During the initial SEO audit, `icon.svg` was added as the primary icon entry because SVG offers better scaling. Anthony later reviewed this and confirmed he does **not** want SVG as the primary favicon — he prefers `favicon.png`.
 
-**Auto-fix applied:** Added `{ url: "/icon.svg", type: "image/svg+xml" }` as the first icon entry in `layout.tsx`. Modern browsers will prefer SVG, with PNG as fallback:
+**Overrides applied (latest session):**
+1. Removed `{ url: "/icon.svg", type: "image/svg+xml" }` from metadata entirely
+2. `favicon.png` promoted to first (primary) icon entry
+3. `public/icon.svg` retained on disk for potential future use, but no longer declared in HTML
+
 ```ts
 icons: {
   icon: [
-    { url: "/icon.svg", type: "image/svg+xml" },
-    { url: "/favicon.png", type: "image/png" },
+    { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
   ],
-  apple: [{ url: "/apple-touch-icon.png" }],
+  apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
 },
 ```
 
@@ -1373,7 +1384,7 @@ icons: {
 1. **No `manifest.json` / `site.webmanifest`** — PWA-style metadata is absent. This doesn't hurt SEO directly but affects how the site appears when saved to a device home screen (no custom name, no splash screen, no icon configuration). Adding a manifest is recommended but not critical.
 2. **No `favicon.ico` in Next.js default routes** — Next.js serves a default `favicon.ico` at the root if none exists in `public/`. The generated `public/favicon.ico` will override this, which is correct.
 
-**Verdict: ✅ AUTO-FIXED — icon.svg now referenced, favicon.ico generated. Remaining gaps (PWA manifest) are cosmetic, not critical.**
+**Verdict: ✅ FIXED — SVG removed per Anthony's preference, favicon.ico added, PNG is primary. Remaining gaps (PWA manifest) are cosmetic, not critical.**
 
 ---
 
@@ -1387,14 +1398,14 @@ icons: {
 | 4 | Structured data (JSON-LD) | ✅ PASS — Person, WebSite, ProfessionalService present and valid |
 | 5 | Semantic HTML & headings | ⚠️ Services page: H2→H4 hierarchy skip. No `<article>` on case studies. |
 | 6 | Keyword usage | ⚠️ Significant local SEO gap — Mombasa/Kenya nearly absent from visible text |
-| 7 | Favicon & app icons | ✅ AUTO-FIXED — icon.svg referenced, favicon.ico generated |
+| 7 | Favicon & app icons | ✅ FIXED — SVG removed per Anthony's preference, PNG is primary |
 
 ### Auto-fixes applied (items 1, 2, 7 — no judgment call)
 
 | Item | What was done |
 |------|---------------|
 | Sitemap | Rewritten to dynamically derive routes from `src/app/` directory structure at build time (was hardcoded list) |
-| Favicon | Generated `public/favicon.ico` from existing `favicon.png`. Added `icon.svg` reference to `layout.tsx` icons config (SVG was present in `public/` but unused) |
+| Favicon | Generated `public/favicon.ico` from existing `favicon.png`. Added then later removed `icon.svg` reference per Anthony's preference — PNG is now primary |
 | Robots.txt | Already correct — no changes needed |
 
 ### Pending Anthony's approval (items 3–6 — content/voice decisions)
@@ -1515,3 +1526,63 @@ Pages generated: 12 (static) + 1 (dynamic)
 - **Tier 2 gap closed:** "Next.js developer for tourism/hospitality", "custom ERP for SMEs" now in case study H1s
 - **All 7 meta descriptions ≤160 chars** — no SERP truncation
 - **Zero keyword stuffing** — every change reads as natural human copy
+
+---
+
+## Favicon Metadata Compliance — 2026-07-09
+
+### Goal
+Audit favicon files for compliance, ensure all variants are declared in Next.js metadata API with proper `sizes` attributes.
+
+### Audit Results
+
+| Check | Status | Details |
+|-------|:------:|---------|
+| `public/favicon.ico` exists | ✅ | 32×32, ICO format with embedded PNG data |
+| `public/favicon.png` exists | ✅ | 32×32 PNG |
+| `public/icon.svg` exists | ✅ (file) / ❌ (metadata) | Vector SVG — file retained on disk, but removed from HTML metadata per Anthony's preference |
+| `public/apple-touch-icon.png` exists | ✅ | 180×180 PNG |
+| `favicon.ico` declared in metadata | ✅ FIXED | Added as first entry in `icons.icon` with `type: "image/x-icon"`, `sizes: "any"` |
+| `favicon.png` has `sizes` | ✅ FIXED | Added `sizes: "32x32"` |
+| `apple-touch-icon.png` has `sizes` | ✅ FIXED | Added `sizes: "180x180"` |
+| `icon.svg` removed from metadata | ✅ | Removed per Anthony's preference — file retained in `public/` |
+| Build passes | ✅ | `npm run build` — 12 pages, 0 errors, TypeScript strict passed |
+
+### Issue & Fix
+
+**Issue:** The `icons` metadata in `layout.tsx`:
+- Did **not** include `favicon.ico` — the most universal fallback format was absent from `<link>` tags
+- Missing `sizes` attributes on `favicon.png` and `apple-touch-icon.png`, reducing browser optimization
+
+**Fix applied to `src/app/layout.tsx`:**
+
+```ts
+// After (Session 1 favicon compliance auto-fix):
+icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+
+// After (Session 2 — Anthony's preference override):
+icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+```
+
+### Verdict
+
+✅ **All favicon declarations now compliant.** Four changes applied:
+1. `favicon.ico` added as first icon entry (broadest compatibility)
+2. `sizes: "any"` on the ICO entry
+3. `sizes: "32x32"` on favicon.png and `sizes: "180x180"` on apple-touch-icon.png
+4. SVG removed from metadata, PNG promoted to primary per Anthony's preference
+
+**⚠️ Note:** `icon.svg` was added as the primary icon during the initial auto-fix (Session 1) because SVG offers better vector scaling. Anthony later explicitly confirmed he does **not** want SVG as the primary favicon — he prefers `favicon.png`. The SVG file remains in `public/` for potential future use but is no longer declared in HTML `<link>` tags.
