@@ -15,9 +15,23 @@ export async function POST(request: Request) {
       );
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return Response.json(
+        { error: "Invalid email address." },
+        { status: 400 }
+      );
+    }
+
     if (!/^[+\d\s]{7,20}$/.test(whatsapp)) {
       return Response.json(
         { error: "Invalid phone number. Use +, digits, and spaces only (7–20 characters)." },
+        { status: 400 }
+      );
+    }
+
+    if (scope.trim().length < 10) {
+      return Response.json(
+        { error: "Project scope must be at least 10 characters." },
         { status: 400 }
       );
     }

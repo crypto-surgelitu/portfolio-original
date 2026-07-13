@@ -14,6 +14,8 @@ interface FormData {
   scope: string;
 }
 
+type FormErrors = Partial<Record<keyof FormData, string>>;
+
 const projectTypes = [
   "Business Website",
   "Web Application",
@@ -54,6 +56,7 @@ function Input({
   type = "text",
   required = true,
   placeholder,
+  error,
 }: {
   label: string;
   name: string;
@@ -62,7 +65,9 @@ function Input({
   type?: string;
   required?: boolean;
   placeholder?: string;
+  error?: string;
 }) {
+  const errorId = `${name}-error`;
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -79,8 +84,19 @@ function Input({
         onChange={(e) => onChange(e.target.value)}
         required={required}
         placeholder={placeholder || label}
-        className="w-full bg-surface-elevated border border-border-subtle rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-primary focus:ring-1 focus:ring-primary min-h-[44px]"
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
+        className={`w-full bg-surface-elevated border rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-text-muted outline-none transition-colors duration-200 focus:ring-1 min-h-[44px] ${
+          error
+            ? "border-error focus:border-error focus:ring-error"
+            : "border-border-subtle focus:border-primary focus:ring-primary"
+        }`}
       />
+      {error && (
+        <p id={errorId} className="text-error text-[14px] leading-[20px]" role="alert">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -92,6 +108,7 @@ function Select({
   onChange,
   options,
   placeholder,
+  error,
 }: {
   label: string;
   name: string;
@@ -99,7 +116,9 @@ function Select({
   onChange: (v: string) => void;
   options: string[];
   placeholder: string;
+  error?: string;
 }) {
+  const errorId = `${name}-error`;
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -114,7 +133,13 @@ function Select({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required
-        className="w-full bg-surface-elevated border border-border-subtle rounded px-4 py-3 font-body-md text-body-md text-on-surface outline-none transition-colors duration-200 focus:border-primary focus:ring-1 focus:ring-primary min-h-[44px] appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23e2e2e2%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
+        className={`w-full bg-surface-elevated border rounded px-4 py-3 font-body-md text-body-md text-on-surface outline-none transition-colors duration-200 focus:ring-1 min-h-[44px] appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23e2e2e2%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat ${
+          error
+            ? "border-error focus:border-error focus:ring-error"
+            : "border-border-subtle focus:border-primary focus:ring-primary"
+        }`}
       >
         <option value="" disabled>
           {placeholder}
@@ -125,25 +150,71 @@ function Select({
           </option>
         ))}
       </select>
+      {error && (
+        <p id={errorId} className="text-error text-[14px] leading-[20px]" role="alert">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(initialForm);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   function update(field: keyof FormData) {
-    return (value: string) => setForm((prev) => ({ ...prev, [field]: value }));
+    return (value: string) => {
+      setForm((prev) => ({ ...prev, [field]: value }));
+      if (errors[field]) {
+        setErrors((prev) => ({ ...prev, [field]: undefined }));
+      }
+    };
+  }
+
+  function validate(): boolean {
+    const newErrors: FormErrors = {};
+
+    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!form.whatsapp.trim()) {
+      newErrors.whatsapp = "Phone number is required";
+    } else if (!/^[+\d\s]{7,20}$/.test(form.whatsapp.trim())) {
+      newErrors.whatsapp = "Use +, digits, and spaces only (7–20 characters)";
+    }
+
+    if (!form.projectType) newErrors.projectType = "Select a project type";
+    if (!form.budget) newErrors.budget = "Select a budget range";
+    if (!form.timeline) newErrors.timeline = "Select a timeline";
+
+    if (!form.scope.trim()) {
+      newErrors.scope = "Project scope is required";
+    } else if (form.scope.trim().length < 10) {
+      newErrors.scope = "Describe your project in at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setStatus("loading");
     setErrorMsg("");
+
+    if (!validate()) return;
+
+    setStatus("loading");
 
     try {
       const res = await fetch("/api/contact", {
@@ -159,6 +230,7 @@ export default function ContactForm() {
 
       setStatus("success");
       setForm(initialForm);
+      setErrors({});
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Failed to send inquiry");
@@ -199,6 +271,7 @@ export default function ContactForm() {
               value={form.firstName}
               onChange={update("firstName")}
               placeholder="First Name"
+              error={errors.firstName}
             />
             <Input
               label="Last Name"
@@ -206,6 +279,7 @@ export default function ContactForm() {
               value={form.lastName}
               onChange={update("lastName")}
               placeholder="Last Name"
+              error={errors.lastName}
             />
           </div>
 
@@ -216,6 +290,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={update("email")}
             placeholder="Corporate Email"
+            error={errors.email}
           />
 
           <Input
@@ -225,6 +300,7 @@ export default function ContactForm() {
             value={form.whatsapp}
             onChange={update("whatsapp")}
             placeholder="+254 7XX XXX XXX"
+            error={errors.whatsapp}
           />
 
           <Select
@@ -234,6 +310,7 @@ export default function ContactForm() {
             onChange={update("projectType")}
             options={projectTypes}
             placeholder="Select Project Type"
+            error={errors.projectType}
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -244,6 +321,7 @@ export default function ContactForm() {
               onChange={update("budget")}
               options={budgets}
               placeholder="Select Budget Range"
+              error={errors.budget}
             />
             <Select
               label="Expected Timeline"
@@ -252,6 +330,7 @@ export default function ContactForm() {
               onChange={update("timeline")}
               options={timelines}
               placeholder="Select Timeline"
+              error={errors.timeline}
             />
           </div>
 
@@ -269,9 +348,20 @@ export default function ContactForm() {
               onChange={(e) => update("scope")(e.target.value)}
               rows={4}
               required
+              aria-invalid={!!errors.scope}
+              aria-describedby={errors.scope ? "scope-error" : undefined}
               placeholder="Describe your project, goals, and any specific requirements"
-              className="w-full bg-surface-elevated border border-border-subtle rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-primary focus:ring-1 focus:ring-primary resize-y min-h-[100px]"
+              className={`w-full bg-surface-elevated border rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-text-muted outline-none transition-colors duration-200 focus:ring-1 resize-y min-h-[100px] ${
+                errors.scope
+                  ? "border-error focus:border-error focus:ring-error"
+                  : "border-border-subtle focus:border-primary focus:ring-primary"
+              }`}
             />
+            {errors.scope && (
+              <p id="scope-error" className="text-error text-[14px] leading-[20px]" role="alert">
+                {errors.scope}
+              </p>
+            )}
           </div>
 
           {status === "error" && (
