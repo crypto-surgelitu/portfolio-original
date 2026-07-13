@@ -7,6 +7,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
+  whatsapp: string;
   projectType: string;
   budget: string;
   timeline: string;
@@ -38,6 +39,7 @@ const initialForm: FormData = {
   firstName: "",
   lastName: "",
   email: "",
+  whatsapp: "",
   projectType: "",
   budget: "",
   timeline: "",
@@ -214,6 +216,15 @@ export default function ContactForm() {
             value={form.email}
             onChange={update("email")}
             placeholder="Corporate Email"
+          />
+
+          <Input
+            label="Phone Number (WhatsApp)"
+            name="whatsapp"
+            type="tel"
+            value={form.whatsapp}
+            onChange={update("whatsapp")}
+            placeholder="+254 7XX XXX XXX"
           />
 
           <Select
