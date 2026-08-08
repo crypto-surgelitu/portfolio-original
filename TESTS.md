@@ -1543,7 +1543,7 @@ Audit favicon files for compliance, ensure all variants are declared in Next.js 
 | `public/icon.svg` exists | ✅ (file) / ❌ (metadata) | Vector SVG — file retained on disk, but removed from HTML metadata per Anthony's preference |
 | `public/apple-touch-icon.png` exists | ✅ | 180×180 PNG |
 | `favicon.ico` declared in metadata | ✅ FIXED | Added as first entry in `icons.icon` with `type: "image/x-icon"`, `sizes: "any"` |
-| `favicon.png` has `sizes` | ✅ FIXED | Added `sizes: "32x32"` |
+| `favicon.png` has `sizes` | ✅ FIXED | Added `sizes: "96x96"` (was `32x32`) |
 | `apple-touch-icon.png` has `sizes` | ✅ FIXED | Added `sizes: "180x180"` |
 | `icon.svg` removed from metadata | ✅ | Removed per Anthony's preference — file retained in `public/` |
 | Build passes | ✅ | `npm run build` — 12 pages, 0 errors, TypeScript strict passed |
@@ -1579,10 +1579,137 @@ icons: {
 
 ### Verdict
 
-✅ **All favicon declarations now compliant.** Four changes applied:
+✅ **All favicon declarations now compliant.** Five changes applied:
 1. `favicon.ico` added as first icon entry (broadest compatibility)
 2. `sizes: "any"` on the ICO entry
-3. `sizes: "32x32"` on favicon.png and `sizes: "180x180"` on apple-touch-icon.png
-4. SVG removed from metadata, PNG promoted to primary per Anthony's preference
+3. `sizes: "32x32"` on favicon.png → upgraded to `"128x128"` (see below)
+4. `sizes: "180x180"` on apple-touch-icon.png (correct, no change)
+5. SVG removed from metadata, PNG promoted to primary per Anthony's preference
+
+#### Session 2 — Favicon quality fix (Google SERP compliance + proper source)
+
+**Problem:** Google requires a minimum **48×48px** actual image dimensions for search result favicons. The original `favicon.png` file was **32×32** — below the threshold.
+
+**⚠️ First attempt (Session 2a) was flawed:** The 32×32 was Lanczos-upscaled to 96×96. While the file dimensions and `sizes` attribute matched, the result was a blurry stretched low-res image — not a real quality fix.
+
+**Corrected fix (Session 2b):**
+- Source: `public/icon.svg` — clean SVG with gold `#f2ca50` rounded rect (rx=20) and bold black Georgia "A"
+- Rendered SVG directly via sharp at **128×128** → saved to `public/favicon.png`
+- `layout.tsx` `sizes` attribute updated from `"96x96"` to `"128x128"`
+- `apple-touch-icon.png` verified at 180×180 ✅ — no change needed
+
+**Verification (actual command output):**
+```
+Actual file: favicon.png = 128 x 128 | format: png
+Actual file: apple-touch-icon.png = 180 x 180 | format: png
+```
+```
+// layout.tsx:46-52 (exact current state)
+icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+```
+
+Build: 12 pages, 0 errors ✅
 
 **⚠️ Note:** `icon.svg` was added as the primary icon during the initial auto-fix (Session 1) because SVG offers better vector scaling. Anthony later explicitly confirmed he does **not** want SVG as the primary favicon — he prefers `favicon.png`. The SVG file remains in `public/` for potential future use but is no longer declared in HTML `<link>` tags.
+
+## Favicon Ground Truth Verification — July 10, 2026
+
+### Step 1 — layout.tsx sizes (raw grep)
+```
+$ grep -n "sizes" src/app/layout.tsx
+48:      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
+49:      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+51:    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+```
+
+### Step 2 — favicon.png actual file dimensions (sharp metadata)
+```
+$ node -e "const sharp=require('sharp');sharp('public/favicon.png').metadata().then(m=>console.log(m.width+'x'+m.height,'format:',m.format,'size:',m.size,'bytes'))"
+128x128 format: png size: undefined bytes
+```
+
+### Step 3 — Git state (status, diff, log)
+```
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   TESTS.md
+	modified:   public/favicon.png
+	modified:   src/app/layout.tsx
+
+no changes added to use "git add" and/or "git commit -a"
+
+$ git diff src/app/layout.tsx
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index ec461e7..5c6c84e 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -45,7 +45,7 @@ export const metadata: Metadata = {
+   },
+   icons: {
+     icon: [
+-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
++      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
+       { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+     ],
+     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+
+$ git log -3 --oneline
+9ef04e6 favicon changes
+132149c mobile hover fixes
+eb71aa1 SEO OPTIMIZATION
+```
+
+### Step 4 — Deployment state
+Head commit on branch `main`: **9ef04e6**
+
+Vercel CLI timed out (not immediately available on this machine). To check production deployment:
+1. Open the Vercel dashboard → select this project
+2. Go to **Deployments** tab
+3. Check the latest **Production** deployment's commit SHA
+4. Compare against `9ef04e6` — they must match for the favicon change to be live
+
+If they do not match, the favicon changes are **not live** — only sitting uncommitted in the working tree.
+
+### Finding
+layout.tsx on disk and favicon.png on disk match each other (128×128 / `sizes: "128x128"`) but **neither is committed**. The file `favicon.png` on disk was regenerated from `public/icon.svg` (vector source), not upscaled from 32×32. `apple-touch-icon.png` at 180×180 unchanged.
+
+## Contact Form Copy Update — July 10, 2026
+
+**Changed file:** `src/components/contact/ContactForm.tsx`
+
+### Budget dropdown — before/after
+| Before | After |
+|--------|-------|
+| Below KSh 50,000 | Below KSh 50,000 (~$387) |
+| KSh 50,000 - 100,000 | KSh 50,000 - 100,000 (~$387 - $774) |
+| KSh 100,000 - 250,000 | KSh 100,000 - 250,000 (~$774 - $1,935) |
+| KSh 250,000+ | KSh 250,000+ (~$1,935+) |
+| Not Sure Yet | Not Sure Yet (unchanged) |
+
+Added `const KES_TO_USD = 129;` with inline comment noting it's approximate.
+
+### Timeline dropdown — before/after
+| Before | After |
+|--------|-------|
+| ASAP | *(removed)* |
+| 1 Month | 1-2 Weeks |
+| 2-3 Months | 3-4 Weeks |
+| Flexible | 1-2 Months |
+| | 3+ Months |
+| | Flexible (moved to end) |
+
+### Verification
+- **Build:** Next.js production build passes (12 pages, 0 errors) ✅
+- **TypeScript/lint:** No errors
+- **Live test:** Not performed (server killed per user request — Anthony will verify dropdown display and Brevo email receipt manually)
